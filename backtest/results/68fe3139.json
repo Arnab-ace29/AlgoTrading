@@ -1,0 +1,32 @@
+{
+  "total_trades": 0,
+  "win_rate": 0.0,
+  "total_return": 0.0,
+  "sharpe": 0.0,
+  "max_drawdown": 0.0,
+  "avg_trade_pct": 0.0,
+  "profit_factor": 0.0,
+  "expectancy": 0.0,
+  "gross_pnl": 0.0,
+  "net_pnl": 0.0,
+  "costs": 0.0,
+  "run_id": "68fe3139",
+  "params": {
+    "symbols": [
+      "RELIANCE",
+      "TCS",
+      "INFY",
+      "ICICIBANK",
+      "WIPRO"
+    ],
+    "from": "2025-01-01",
+    "to": "2026-06-30",
+    "timeframe": "5min",
+    "walk_forward": true,
+    "n_folds": 3,
+    "train_days": 120,
+    "test_days": 30
+  },
+  "per_fold": [],
+  "result_path": ""
+}

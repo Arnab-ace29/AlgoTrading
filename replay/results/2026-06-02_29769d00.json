@@ -1,0 +1,2360 @@
+{
+  "run_id": "29769d00",
+  "date": "2026-06-02",
+  "params": {
+    "capital": 100000.0,
+    "risk_profile": "HIGH",
+    "use_ml_gates": true,
+    "use_margin": true,
+    "timeframe": "5min"
+  },
+  "summary": {
+    "total_trades": 12,
+    "wins": 3,
+    "losses": 9,
+    "win_rate": 25.0,
+    "longs": 10,
+    "shorts": 2,
+    "gross_pnl": -1825.7,
+    "costs": 1215.15,
+    "net_pnl": -3040.85,
+    "max_drawdown": 3.04,
+    "return_pct": -3.041,
+    "profit_factor": 0.377,
+    "expectancy": -253.4,
+    "capital": 100000.0,
+    "peak_exposure": 441363.2,
+    "peak_exposure_pct": 441.4,
+    "peak_leverage": 4.41,
+    "uses_margin": true,
+    "cost_parts": {
+      "brokerage": 380.54,
+      "stt": 201.02,
+      "exchange": 47.79,
+      "sebi": 1.62,
+      "stamp": 24.12,
+      "gst": 77.39,
+      "slippage": 482.69,
+      "total": 1215.15
+    },
+    "by_exit_reason": {
+      "SL_HIT": {
+        "trades": 10,
+        "net": -4859.01
+      },
+      "TARGET_HIT": {
+        "trades": 2,
+        "net": 1818.16
+      }
+    }
+  },
+  "universe": [
+    {
+      "symbol": "DATAMATICS",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.69312,
+      "reasons": [],
+      "last_score": 0.7201,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "TRADED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.49344,
+      "reasons": [],
+      "last_score": -0.677,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "TRADED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "NBCC",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.73806,
+      "reasons": [],
+      "last_score": -0.5084,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_DOWN",
+      "status": "TRADED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "TECHM",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.64836,
+      "reasons": [],
+      "last_score": 0.1523,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "TRADED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "NSLNISP",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.68927,
+      "reasons": [],
+      "last_score": -0.0,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "TRADED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "RUBICON",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.79931,
+      "reasons": [],
+      "last_score": -0.0,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "TRADED",
+      "multiplier": 2.0,
+      "margin_pct": 50.0
+    },
+    {
+      "symbol": "NMDC",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.78618,
+      "reasons": [],
+      "last_score": 0.4654,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "ARMED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "CPPLUS",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.73491,
+      "reasons": [],
+      "last_score": 0.3422,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "ARMED",
+      "multiplier": 1.0,
+      "margin_pct": 100.0
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.49278,
+      "reasons": [],
+      "last_score": -0.332,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "ARMED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "PTCIL",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.73427,
+      "reasons": [],
+      "last_score": -0.3121,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "ARMED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "SUPRIYA",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.75045,
+      "reasons": [],
+      "last_score": -0.222,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "ARMED",
+      "multiplier": 2.0,
+      "margin_pct": 50.0
+    },
+    {
+      "symbol": "CIPLA",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.49446,
+      "reasons": [],
+      "last_score": 0.0,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_DOWN",
+      "status": "ARMED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "COALINDIA",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.58205,
+      "reasons": [],
+      "last_score": 0.6594,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "GRASIM",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.57538,
+      "reasons": [],
+      "last_score": -0.6059,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "HCLTECH",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.4622,
+      "reasons": [],
+      "last_score": 0.5934,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "HINDALCO",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.55717,
+      "reasons": [],
+      "last_score": 0.4531,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "WIPRO",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.59365,
+      "reasons": [],
+      "last_score": 0.1313,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "PERSISTENT",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.57243,
+      "reasons": [],
+      "last_score": 0.0996,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "INFY",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.53407,
+      "reasons": [],
+      "last_score": 0.494,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "SCANNING",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "AEGISLOG",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.72719,
+      "reasons": [],
+      "last_score": -0.2651,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "SCANNING",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "SAIL",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.56516,
+      "reasons": [],
+      "last_score": -0.186,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "SCANNING",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "KPRMILL",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.70317,
+      "reasons": [],
+      "last_score": -0.1457,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "SCANNING",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    },
+    {
+      "symbol": "SAMMAANCAP",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.564,
+      "reasons": [],
+      "last_score": -0.0,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "SCANNING",
+      "multiplier": 5.0,
+      "margin_pct": 20.0
+    }
+  ],
+  "trades": [
+    {
+      "symbol": "ADANIENT",
+      "side": "SELL",
+      "direction": "SHORT",
+      "qty": 57,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:40:00+05:30",
+      "entry_price": 2878.2,
+      "exit_price": 2890.87,
+      "notional": 164057.4,
+      "leverage": 1.641,
+      "gross_pnl": -722.19,
+      "cost": 203.88,
+      "net_pnl": -926.07,
+      "return_pct": -0.00564,
+      "bars_held": 1,
+      "exit_reason": "SL_HIT",
+      "entry_score": -0.9049,
+      "regime": "TRENDING_DOWN",
+      "sizing_note": "Tier:3LOT(>=0.75) | 57 sh (risk \u20b9833 @5.0\u00d7MIS) | qty:57",
+      "cost_parts": {
+        "brokerage": 40.0,
+        "stt": 41.19,
+        "exchange": 9.77,
+        "sebi": 0.33,
+        "stamp": 4.92,
+        "gst": 9.02,
+        "slippage": 98.65,
+        "total": 203.88
+      },
+      "signal_scores": {
+        "vwap_breakout": -1.0,
+        "rsi_momentum": -0.9373,
+        "mean_reversion": 0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 32811.48
+    },
+    {
+      "symbol": "NBCC",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 313,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:45:00+05:30",
+      "entry_price": 105.7,
+      "exit_price": 104.81,
+      "notional": 33084.1,
+      "leverage": 0.331,
+      "gross_pnl": -278.57,
+      "cost": 54.67,
+      "net_pnl": -333.24,
+      "return_pct": -0.01007,
+      "bars_held": 2,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.6635,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 313 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:313",
+      "cost_parts": {
+        "brokerage": 19.77,
+        "stt": 8.2,
+        "exchange": 1.96,
+        "sebi": 0.07,
+        "stamp": 0.99,
+        "gst": 3.92,
+        "slippage": 19.77,
+        "total": 54.67
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5409,
+        "rsi_momentum": 0.8575,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 6616.82
+    },
+    {
+      "symbol": "NSLNISP",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 1106,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:50:00+05:30",
+      "entry_price": 52.4,
+      "exit_price": 53.53,
+      "notional": 57954.4,
+      "leverage": 0.58,
+      "gross_pnl": 1249.78,
+      "cost": 97.41,
+      "net_pnl": 1152.37,
+      "return_pct": 0.01988,
+      "bars_held": 3,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.7658,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 1106 sh (risk \u20b9833 @5.0\u00d7MIS) | qty:1106",
+      "cost_parts": {
+        "brokerage": 35.15,
+        "stt": 14.8,
+        "exchange": 3.48,
+        "sebi": 0.12,
+        "stamp": 1.74,
+        "gst": 6.97,
+        "slippage": 35.15,
+        "total": 97.41
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6689,
+        "rsi_momentum": 0.9535,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 11590.88
+    },
+    {
+      "symbol": "TECHM",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 66,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T10:00:00+05:30",
+      "entry_price": 1572.8,
+      "exit_price": 1564.38,
+      "notional": 103804.8,
+      "leverage": 1.038,
+      "gross_pnl": -555.72,
+      "cost": 145.74,
+      "net_pnl": -701.46,
+      "return_pct": -0.00676,
+      "bars_held": 5,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7483,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 66 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:66",
+      "cost_parts": {
+        "brokerage": 40.0,
+        "stt": 25.81,
+        "exchange": 6.15,
+        "sebi": 0.21,
+        "stamp": 3.11,
+        "gst": 8.34,
+        "slippage": 62.12,
+        "total": 145.74
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6418,
+        "rsi_momentum": 0.9434,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 20760.96
+    },
+    {
+      "symbol": "NSLNISP",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 1000,
+      "entry_time": "2026-06-02T09:55:00+05:30",
+      "exit_time": "2026-06-02T10:10:00+05:30",
+      "entry_price": 53.31,
+      "exit_price": 52.48,
+      "notional": 53310.0,
+      "leverage": 0.533,
+      "gross_pnl": -830.0,
+      "cost": 87.74,
+      "net_pnl": -917.74,
+      "return_pct": -0.01722,
+      "bars_held": 3,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7927,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 1000 sh (risk \u20b9833 @5.0\u00d7MIS) | qty:1000",
+      "cost_parts": {
+        "brokerage": 31.74,
+        "stt": 13.12,
+        "exchange": 3.14,
+        "sebi": 0.11,
+        "stamp": 1.6,
+        "gst": 6.3,
+        "slippage": 31.74,
+        "total": 87.74
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.7144,
+        "rsi_momentum": 0.9638,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 10662.0
+    },
+    {
+      "symbol": "PERSISTENT",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 15,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T10:15:00+05:30",
+      "entry_price": 5497.5,
+      "exit_price": 5550.3,
+      "notional": 82462.5,
+      "leverage": 0.825,
+      "gross_pnl": 792.0,
+      "cost": 126.21,
+      "net_pnl": 665.79,
+      "return_pct": 0.00807,
+      "bars_held": 8,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.726,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 15 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:15",
+      "cost_parts": {
+        "brokerage": 40.0,
+        "stt": 20.81,
+        "exchange": 4.92,
+        "sebi": 0.17,
+        "stamp": 2.47,
+        "gst": 8.12,
+        "slippage": 49.72,
+        "total": 126.21
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6511,
+        "rsi_momentum": 0.8763,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 16492.5
+    },
+    {
+      "symbol": "WIPRO",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 414,
+      "entry_time": "2026-06-02T09:45:00+05:30",
+      "exit_time": "2026-06-02T10:20:00+05:30",
+      "entry_price": 207.85,
+      "exit_price": 208.07,
+      "notional": 86049.9,
+      "leverage": 0.86,
+      "gross_pnl": 91.3,
+      "cost": 129.21,
+      "net_pnl": -37.91,
+      "return_pct": -0.00044,
+      "bars_held": 7,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.6977,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 414 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:414",
+      "cost_parts": {
+        "brokerage": 40.0,
+        "stt": 21.54,
+        "exchange": 5.11,
+        "sebi": 0.17,
+        "stamp": 2.58,
+        "gst": 8.15,
+        "slippage": 51.66,
+        "total": 129.21
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5863,
+        "rsi_momentum": 0.8864,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 17209.98
+    },
+    {
+      "symbol": "RUBICON",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 13,
+      "entry_time": "2026-06-02T09:50:00+05:30",
+      "exit_time": "2026-06-02T10:40:00+05:30",
+      "entry_price": 1238.2,
+      "exit_price": 1213.09,
+      "notional": 16096.6,
+      "leverage": 0.161,
+      "gross_pnl": -326.43,
+      "cost": 26.42,
+      "net_pnl": -352.85,
+      "return_pct": -0.02192,
+      "bars_held": 10,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7681,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 13 sh (risk \u20b9333 @2.0\u00d7MIS) | qty:13",
+      "cost_parts": {
+        "brokerage": 9.56,
+        "stt": 3.94,
+        "exchange": 0.95,
+        "sebi": 0.03,
+        "stamp": 0.48,
+        "gst": 1.9,
+        "slippage": 9.56,
+        "total": 26.42
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.8297,
+        "rsi_momentum": 0.7582,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 2.0,
+      "margin_required": 8048.3
+    },
+    {
+      "symbol": "NSLNISP",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 672,
+      "entry_time": "2026-06-02T10:30:00+05:30",
+      "exit_time": "2026-06-02T10:55:00+05:30",
+      "entry_price": 53.26,
+      "exit_price": 52.43,
+      "notional": 35790.72,
+      "leverage": 0.358,
+      "gross_pnl": -557.76,
+      "cost": 58.9,
+      "net_pnl": -616.66,
+      "return_pct": -0.01723,
+      "bars_held": 5,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7101,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 672 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:672",
+      "cost_parts": {
+        "brokerage": 21.31,
+        "stt": 8.81,
+        "exchange": 2.11,
+        "sebi": 0.07,
+        "stamp": 1.07,
+        "gst": 4.23,
+        "slippage": 21.31,
+        "total": 58.9
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6264,
+        "rsi_momentum": 0.8673,
+        "mean_reversion": 0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 7158.14
+    },
+    {
+      "symbol": "TECHM",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 31,
+      "entry_time": "2026-06-02T10:40:00+05:30",
+      "exit_time": "2026-06-02T10:55:00+05:30",
+      "entry_price": 1583.9,
+      "exit_price": 1575.12,
+      "notional": 49100.9,
+      "leverage": 0.491,
+      "gross_pnl": -272.18,
+      "cost": 81.27,
+      "net_pnl": -353.45,
+      "return_pct": -0.0072,
+      "bars_held": 3,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.6765,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 31 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:31",
+      "cost_parts": {
+        "brokerage": 29.38,
+        "stt": 12.21,
+        "exchange": 2.91,
+        "sebi": 0.1,
+        "stamp": 1.47,
+        "gst": 5.83,
+        "slippage": 29.38,
+        "total": 81.27
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5372,
+        "rsi_momentum": 0.8947,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 9820.18
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "side": "SELL",
+      "direction": "SHORT",
+      "qty": 25,
+      "entry_time": "2026-06-02T10:40:00+05:30",
+      "exit_time": "2026-06-02T11:15:00+05:30",
+      "entry_price": 2623.4,
+      "exit_price": 2618.1,
+      "notional": 65585.0,
+      "leverage": 0.656,
+      "gross_pnl": 132.62,
+      "cost": 108.78,
+      "net_pnl": 23.84,
+      "return_pct": 0.00036,
+      "bars_held": 7,
+      "exit_reason": "SL_HIT",
+      "entry_score": -0.677,
+      "regime": "TRENDING_DOWN",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 25 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:25",
+      "cost_parts": {
+        "brokerage": 39.31,
+        "stt": 16.36,
+        "exchange": 3.89,
+        "sebi": 0.13,
+        "stamp": 1.97,
+        "gst": 7.8,
+        "slippage": 39.31,
+        "total": 108.78
+      },
+      "signal_scores": {
+        "vwap_breakout": -0.7425,
+        "rsi_momentum": -0.6893,
+        "mean_reversion": 0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 13117.0
+    },
+    {
+      "symbol": "DATAMATICS",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 69,
+      "entry_time": "2026-06-02T10:05:00+05:30",
+      "exit_time": "2026-06-02T12:15:00+05:30",
+      "entry_price": 833.0,
+      "exit_price": 825.05,
+      "notional": 57477.0,
+      "leverage": 0.575,
+      "gross_pnl": -548.55,
+      "cost": 94.92,
+      "net_pnl": -643.47,
+      "return_pct": -0.0112,
+      "bars_held": 26,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7201,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 69 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:69",
+      "cost_parts": {
+        "brokerage": 34.32,
+        "stt": 14.23,
+        "exchange": 3.4,
+        "sebi": 0.11,
+        "stamp": 1.72,
+        "gst": 6.81,
+        "slippage": 34.32,
+        "total": 94.92
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5709,
+        "rsi_momentum": 0.9617,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 5.0,
+      "margin_required": 11495.4
+    }
+  ],
+  "events": [
+    {
+      "t": "2026-06-02T09:00:00",
+      "type": "UNIVERSE_SET",
+      "symbol": "",
+      "detail": {
+        "detail_strategies": {
+          "momentum_vwap": [
+            "TECHM",
+            "WIPRO",
+            "COALINDIA",
+            "GRASIM",
+            "HINDALCO",
+            "INFY",
+            "CIPLA",
+            "ASIANPAINT",
+            "ADANIENT",
+            "HCLTECH"
+          ],
+          "rsi_momentum": [
+            "RUBICON",
+            "NMDC",
+            "SUPRIYA",
+            "NBCC",
+            "CPPLUS",
+            "PTCIL",
+            "AEGISLOG",
+            "KPRMILL",
+            "DATAMATICS",
+            "NSLNISP"
+          ],
+          "mean_reversion": [
+            "NMDC",
+            "NBCC",
+            "TECHM",
+            "WIPRO",
+            "COALINDIA",
+            "PERSISTENT",
+            "SAIL",
+            "SAMMAANCAP",
+            "GRASIM",
+            "HINDALCO"
+          ],
+          "ml_macro": [
+            "RUBICON",
+            "NMDC",
+            "SUPRIYA",
+            "NBCC",
+            "CPPLUS",
+            "PTCIL",
+            "AEGISLOG",
+            "KPRMILL",
+            "DATAMATICS",
+            "NSLNISP"
+          ]
+        },
+        "n": 23
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "SESSION_OPEN",
+      "symbol": "",
+      "detail": {
+        "symbols_with_data": [
+          "ADANIENT",
+          "AEGISLOG",
+          "ASIANPAINT",
+          "CIPLA",
+          "COALINDIA",
+          "CPPLUS",
+          "DATAMATICS",
+          "GRASIM",
+          "HCLTECH",
+          "HINDALCO",
+          "INFY",
+          "KPRMILL",
+          "NBCC",
+          "NMDC",
+          "NSLNISP",
+          "PERSISTENT",
+          "PTCIL",
+          "RUBICON",
+          "SAIL",
+          "SAMMAANCAP",
+          "SUPRIYA",
+          "TECHM",
+          "WIPRO"
+        ],
+        "bars": 75
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (10min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (10min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (10min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NBCC",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "ADANIENT",
+      "detail": {
+        "side": "SELL",
+        "score": -0.9049,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "NBCC",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6635,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7658,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "score": 0.726,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5902,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7483,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "ADANIENT",
+      "detail": {
+        "side": "SELL",
+        "direction": "SHORT",
+        "qty": 57,
+        "price": 2878.2,
+        "notional": 164057.4,
+        "leverage": 1.64,
+        "sl": 2890.87,
+        "tgt": 2859.2,
+        "score": -0.9049,
+        "regime": "TRENDING_DOWN",
+        "sizing_note": "Tier:3LOT(>=0.75) | 57 sh (risk \u20b9833 @5.0\u00d7MIS) | qty:57",
+        "reason_chain": [
+          "composite -0.905 @ TRENDING_DOWN",
+          "top signals: vwap_breakout (-0.50), rsi_momentum (-0.37)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": -1.0,
+          "rsi_momentum": -0.9373,
+          "mean_reversion": 0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 32811.48,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "NBCC",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 313,
+        "price": 105.7,
+        "notional": 33084.1,
+        "leverage": 0.33,
+        "sl": 104.81,
+        "tgt": 107.03,
+        "score": 0.6635,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 313 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:313",
+        "reason_chain": [
+          "composite +0.663 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.34), vwap_breakout (+0.27)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5409,
+          "rsi_momentum": 0.8575,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 6616.82,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 1106,
+        "price": 52.4,
+        "notional": 57954.4,
+        "leverage": 0.58,
+        "sl": 51.65,
+        "tgt": 53.53,
+        "score": 0.7658,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 1106 sh (risk \u20b9833 @5.0\u00d7MIS) | qty:1106",
+        "reason_chain": [
+          "composite +0.766 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.38), vwap_breakout (+0.33)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6689,
+          "rsi_momentum": 0.9535,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 11590.88,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 15,
+        "price": 5497.5,
+        "notional": 82462.5,
+        "leverage": 0.82,
+        "sl": 5462.3,
+        "tgt": 5550.3,
+        "score": 0.726,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 15 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:15",
+        "reason_chain": [
+          "composite +0.726 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.35), vwap_breakout (+0.33)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6511,
+          "rsi_momentum": 0.8763,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 16492.5,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 66,
+        "price": 1572.8,
+        "notional": 103804.8,
+        "leverage": 1.04,
+        "sl": 1564.38,
+        "tgt": 1585.42,
+        "score": 0.7483,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 66 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:66",
+        "reason_chain": [
+          "composite +0.748 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.38), vwap_breakout (+0.32)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6418,
+          "rsi_momentum": 0.9434,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 20760.96,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "HCLTECH",
+      "detail": {
+        "side": "BUY",
+        "score": 0.552,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "side": "SELL",
+        "score": -0.57,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "EXIT",
+      "symbol": "ADANIENT",
+      "detail": {
+        "side": "SELL",
+        "qty": 57,
+        "entry_price": 2878.2,
+        "exit_price": 2890.87,
+        "reason": "SL_HIT",
+        "gross": -722.19,
+        "cost": 203.88,
+        "net": -926.07,
+        "session_pnl": -926.07
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "CPPLUS",
+      "detail": {
+        "side": "BUY",
+        "score": 0.56,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "PTCIL",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6484,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5768,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "WIPRO",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6977,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "EXIT",
+      "symbol": "NBCC",
+      "detail": {
+        "side": "BUY",
+        "qty": 313,
+        "entry_price": 105.7,
+        "exit_price": 104.81,
+        "reason": "SL_HIT",
+        "gross": -278.57,
+        "cost": 54.67,
+        "net": -333.24,
+        "session_pnl": -1259.31
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "NSLNISP",
+      "detail": {
+        "sl": 52.61,
+        "ltp": 52.92
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "CPPLUS",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SUPRIYA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "ENTRY",
+      "symbol": "WIPRO",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 414,
+        "price": 207.85,
+        "notional": 86049.9,
+        "leverage": 0.86,
+        "sl": 207.18,
+        "tgt": 208.86,
+        "score": 0.6977,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 414 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:414",
+        "reason_chain": [
+          "composite +0.698 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.35), vwap_breakout (+0.29)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5863,
+          "rsi_momentum": 0.8864,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 17209.98,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "CPPLUS",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5846,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "RUBICON",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7681,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "EXIT",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "qty": 1106,
+        "entry_price": 52.4,
+        "exit_price": 53.53,
+        "reason": "TARGET_HIT",
+        "gross": 1249.78,
+        "cost": 97.41,
+        "net": 1152.37,
+        "session_pnl": -106.94
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "CPPLUS",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "ENTRY",
+      "symbol": "RUBICON",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 13,
+        "price": 1238.2,
+        "notional": 16096.6,
+        "leverage": 0.16,
+        "sl": 1213.09,
+        "tgt": 1275.86,
+        "score": 0.7681,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 13 sh (risk \u20b9333 @2.0\u00d7MIS) | qty:13",
+        "reason_chain": [
+          "composite +0.768 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.41), rsi_momentum (+0.30)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.8297,
+          "rsi_momentum": 0.7582,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 2.0,
+        "margin_required": 8048.3,
+        "margin_pct": 50.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "ARMED",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7927,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "sl": 5512.83,
+        "ltp": 5527.5
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "ENTRY",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 1000,
+        "price": 53.31,
+        "notional": 53310.0,
+        "leverage": 0.53,
+        "sl": 52.48,
+        "tgt": 54.56,
+        "score": 0.7927,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 1000 sh (risk \u20b9833 @5.0\u00d7MIS) | qty:1000",
+        "reason_chain": [
+          "composite +0.793 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.39), vwap_breakout (+0.36)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.7144,
+          "rsi_momentum": 0.9638,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 10662.0,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "ARMED",
+      "symbol": "ADANIENT",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6081,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDALCO",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5525,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "sl": 5515.33,
+        "ltp": 5530.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "EXIT",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "qty": 66,
+        "entry_price": 1572.8,
+        "exit_price": 1564.38,
+        "reason": "SL_HIT",
+        "gross": -555.72,
+        "cost": 145.74,
+        "net": -701.46,
+        "session_pnl": -808.4
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7201,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "sl": 5523.83,
+        "ltp": 5538.5
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "ENTRY",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 69,
+        "price": 833.0,
+        "notional": 57477.0,
+        "leverage": 0.57,
+        "sl": 825.05,
+        "tgt": 844.92,
+        "score": 0.7201,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 69 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:69",
+        "reason_chain": [
+          "composite +0.720 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.38), vwap_breakout (+0.29)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5709,
+          "rsi_momentum": 0.9617,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 11495.4,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "ARMED",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "score": 0.589,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "sl": 5533.33,
+        "ltp": 5548.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "EXIT",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "qty": 1000,
+        "entry_price": 53.31,
+        "exit_price": 52.48,
+        "reason": "SL_HIT",
+        "gross": -830.0,
+        "cost": 87.74,
+        "net": -917.74,
+        "session_pnl": -1726.14
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "ARMED",
+      "symbol": "CIPLA",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5568,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5935,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "EXIT",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "qty": 15,
+        "entry_price": 5497.5,
+        "exit_price": 5550.3,
+        "reason": "TARGET_HIT",
+        "gross": 792.0,
+        "cost": 126.21,
+        "net": 665.79,
+        "session_pnl": -1060.35
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "WIPRO",
+      "detail": {
+        "sl": 208.07,
+        "ltp": 208.35
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "CIPLA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "ARMED",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6322,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:20:00+05:30",
+      "type": "EXIT",
+      "symbol": "WIPRO",
+      "detail": {
+        "side": "BUY",
+        "qty": 414,
+        "entry_price": 207.85,
+        "exit_price": 208.07,
+        "reason": "SL_HIT",
+        "gross": 91.3,
+        "cost": 129.21,
+        "net": -37.91,
+        "session_pnl": -1098.26
+      }
+    },
+    {
+      "t": "2026-06-02T10:20:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5986,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6097,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDALCO",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6211,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7101,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "score": 0.576,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "WIPRO",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5624,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "ENTRY",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 672,
+        "price": 53.26,
+        "notional": 35790.72,
+        "leverage": 0.36,
+        "sl": 52.43,
+        "tgt": 54.5,
+        "score": 0.7101,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 672 sh (risk \u20b9556 @5.0\u00d7MIS) | qty:672",
+        "reason_chain": [
+          "composite +0.710 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.35), vwap_breakout (+0.31)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6264,
+          "rsi_momentum": 0.8673,
+          "mean_reversion": 0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 7158.14,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "WIPRO",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5787,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5881,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "side": "SELL",
+        "score": -0.677,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6422,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "score": 0.579,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6765,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "WIPRO",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6335,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "EXIT",
+      "symbol": "RUBICON",
+      "detail": {
+        "side": "BUY",
+        "qty": 13,
+        "entry_price": 1238.2,
+        "exit_price": 1213.09,
+        "reason": "SL_HIT",
+        "gross": -326.43,
+        "cost": 26.42,
+        "net": -352.85,
+        "session_pnl": -1451.11
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "ENTRY",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "side": "SELL",
+        "direction": "SHORT",
+        "qty": 25,
+        "price": 2623.4,
+        "notional": 65585.0,
+        "leverage": 0.66,
+        "sl": 2634.19,
+        "tgt": 2607.22,
+        "score": -0.677,
+        "regime": "TRENDING_DOWN",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 25 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:25",
+        "reason_chain": [
+          "composite -0.677 @ TRENDING_DOWN",
+          "top signals: vwap_breakout (-0.37), rsi_momentum (-0.28)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": -0.7425,
+          "rsi_momentum": -0.6893,
+          "mean_reversion": 0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 13117.0,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "ENTRY",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 31,
+        "price": 1583.9,
+        "notional": 49100.9,
+        "leverage": 0.49,
+        "sl": 1575.12,
+        "tgt": 1597.07,
+        "score": 0.6765,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 31 sh (risk \u20b9278 @5.0\u00d7MIS) | qty:31",
+        "reason_chain": [
+          "composite +0.676 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.36), vwap_breakout (+0.27)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5372,
+          "rsi_momentum": 0.8947,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 5.0,
+        "margin_required": 9820.18,
+        "margin_pct": 20.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "WIPRO",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "WIPRO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "WIPRO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "WIPRO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (12/12)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "EXIT",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "qty": 672,
+        "entry_price": 53.26,
+        "exit_price": 52.43,
+        "reason": "SL_HIT",
+        "gross": -557.76,
+        "cost": 58.9,
+        "net": -616.66,
+        "session_pnl": -2067.77
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "EXIT",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "qty": 31,
+        "entry_price": 1583.9,
+        "exit_price": 1575.12,
+        "reason": "SL_HIT",
+        "gross": -272.18,
+        "cost": 81.27,
+        "net": -353.45,
+        "session_pnl": -2421.22
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "DAILY_LOSS_LIMIT: -2421"
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "BREAKER_HALT",
+      "symbol": "",
+      "detail": {
+        "reason": "DAILY_LOSS_LIMIT: -2421",
+        "session_pnl": -2421.22
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "HALTED: daily_loss_limit breached (-2421)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "HALTED: daily_loss_limit breached (-2421)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:05:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "sl": 2618.1,
+        "ltp": 2613.6
+      }
+    },
+    {
+      "t": "2026-06-02T11:15:00+05:30",
+      "type": "EXIT",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "side": "SELL",
+        "qty": 25,
+        "entry_price": 2623.4,
+        "exit_price": 2618.1,
+        "reason": "SL_HIT",
+        "gross": 132.62,
+        "cost": 108.78,
+        "net": 23.84,
+        "session_pnl": -2397.38
+      }
+    },
+    {
+      "t": "2026-06-02T12:15:00+05:30",
+      "type": "EXIT",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "side": "BUY",
+        "qty": 69,
+        "entry_price": 833.0,
+        "exit_price": 825.05,
+        "reason": "SL_HIT",
+        "gross": -548.55,
+        "cost": 94.92,
+        "net": -643.47,
+        "session_pnl": -3040.85
+      }
+    },
+    {
+      "t": "2026-06-02T15:25:00+05:30",
+      "type": "SESSION_CLOSE",
+      "symbol": "",
+      "detail": {
+        "session_pnl": -3040.85,
+        "trades": 12
+      }
+    }
+  ],
+  "gate_counts": {
+    "breaker:OPENING_BLACKOUT": 12,
+    "regime_choppy": 1,
+    "sizing/heat": 23,
+    "breaker:MAX_TRADES_PER_DAY": 9,
+    "breaker:DAILY_LOSS_LIMIT": 1,
+    "breaker:HALTED": 2
+  },
+  "watchlist": {
+    "momentum_vwap": [
+      "TECHM",
+      "WIPRO",
+      "COALINDIA",
+      "GRASIM",
+      "HINDALCO",
+      "INFY",
+      "CIPLA",
+      "ASIANPAINT",
+      "ADANIENT",
+      "HCLTECH"
+    ],
+    "rsi_momentum": [
+      "RUBICON",
+      "NMDC",
+      "SUPRIYA",
+      "NBCC",
+      "CPPLUS",
+      "PTCIL",
+      "AEGISLOG",
+      "KPRMILL",
+      "DATAMATICS",
+      "NSLNISP"
+    ],
+    "mean_reversion": [
+      "NMDC",
+      "NBCC",
+      "TECHM",
+      "WIPRO",
+      "COALINDIA",
+      "PERSISTENT",
+      "SAIL",
+      "SAMMAANCAP",
+      "GRASIM",
+      "HINDALCO"
+    ],
+    "ml_macro": [
+      "RUBICON",
+      "NMDC",
+      "SUPRIYA",
+      "NBCC",
+      "CPPLUS",
+      "PTCIL",
+      "AEGISLOG",
+      "KPRMILL",
+      "DATAMATICS",
+      "NSLNISP"
+    ]
+  }
+}

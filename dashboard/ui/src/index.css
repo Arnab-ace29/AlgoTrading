@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════
+   RETRO TERMINAL THEME — AlgoTrading Dashboard
+   Font:   JetBrains Mono
+   Colors: bg #111318 · panel #181c24 · border #252a33
+   Green: #00e87b · Red: #ff3e3e · Blue: #4da6ff
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --bg:         #111318;
+  --panel:      #181c24;
+  --panel-alt:  #1e222c;
+  --border:     #252a33;
+  --border-hi:  #333a45;
+  --text:       #c8cdd5;
+  --text-dim:   #5a6270;
+  --text-muted: #3d4450;
+  --green:      #00e87b;
+  --green-dim:  #0a2e1e;
+  --red:        #ff3e3e;
+  --red-dim:    #2e0e0e;
+  --blue:       #4da6ff;
+  --blue-dim:   #0a1e32;
+  --yellow:     #e8c300;
+  --purple:     #b388ff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;   /* hard terminal look — NO rounded corners */
+  border-color: var(--border);
+}
+
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+
+/* CRT scanlines overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,0,0,0.035) 3px,
+    rgba(0,0,0,0.035) 4px
+  );
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--border-hi); }
+
+/* ── Utility classes ────────────────────────────────────── */
+.t-green       { color: var(--green); }
+.t-red         { color: var(--red); }
+.t-blue        { color: var(--blue); }
+.t-dim         { color: var(--text-dim); }
+.t-muted       { color: var(--text-muted); }
+
+.t-green-glow  { color: var(--green); text-shadow: 0 0 10px rgba(0,232,123,0.45); }
+.t-red-glow    { color: var(--red);   text-shadow: 0 0 10px rgba(255,62,62,0.45); }
+.t-blue-glow   { color: var(--blue);  text-shadow: 0 0 10px rgba(77,166,255,0.45); }
+
+.t-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+.t-panel-alt {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.t-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.t-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-dim); }
+
+.t-btn-green { border-color: #1a4a2e; color: var(--green); background: var(--green-dim); }
+.t-btn-green:hover { border-color: var(--green); box-shadow: 0 0 8px rgba(0,232,123,0.15); }
+
+.t-btn-red { border-color: #4a1a1a; color: var(--red); background: var(--red-dim); }
+.t-btn-red:hover { border-color: var(--red); box-shadow: 0 0 8px rgba(255,62,62,0.15); }
+
+.t-btn-blue { border-color: #1a2e4a; color: var(--blue); background: var(--blue-dim); }
+.t-btn-blue:hover { border-color: var(--blue); box-shadow: 0 0 8px rgba(77,166,255,0.15); }
+
+.t-btn-yellow { border-color: #3a3a00; color: var(--yellow); background: #1a1a00; }
+.t-btn-yellow:hover { border-color: var(--yellow); box-shadow: 0 0 8px rgba(232,195,0,0.15); }
+
+/* ── Tables ──────────────────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; }
+th {
+  font-size: 9px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--text-muted);
+  padding: 7px 10px 7px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+td { padding: 7px 10px 7px 0; border-bottom: 1px solid #191c24; font-size: 11px; }
+tr:hover td { background: rgba(255,255,255,0.015); }
+
+/* ── Labels ──────────────────────────────────────────────── */
+.t-label {
+  font-size: 9px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+/* ── Section header ──────────────────────────────────────── */
+.t-section-head {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  color: var(--text-dim);
+  padding: 8px 14px;
+  background: var(--panel-alt);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* ── Inputs ──────────────────────────────────────────────── */
+input[type=text], input[type=number], input[type=date] {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  outline: none;
+  transition: border-color 0.1s;
+  width: 100%;
+}
+input[type=text]:focus, input[type=number]:focus, input[type=date]:focus {
+  border-color: var(--green);
+}
+input[type=checkbox] { accent-color: var(--green); }
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: var(--border);
+  outline: none;
+  width: 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px; height: 12px;
+  background: var(--green);
+  cursor: pointer;
+  border: 2px solid var(--bg);
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes t-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.fadein   { animation: fadein 0.2s ease; }
+.t-pulse  { animation: t-pulse 1.5s ease-in-out infinite; }
+.spinning { animation: spin 0.7s linear infinite; }
+
+/* Recharts */
+.recharts-tooltip-wrapper { outline: none; }
+.recharts-cartesian-axis-tick-value { font-family: 'JetBrains Mono', monospace !important; }

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"d:\\\\Python_Codes\\\\AlgoTrading\\\\\")",
+      "Read(//d/Python_Codes/**)"
+    ]
+  }
+}

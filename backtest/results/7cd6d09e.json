@@ -1,0 +1,54 @@
+{
+  "total_trades": 3,
+  "wins": 1,
+  "losses": 2,
+  "win_rate": 33.33,
+  "total_return": -0.07,
+  "sharpe": -7.344,
+  "max_drawdown": 0.11,
+  "avg_trade_pct": -1.264,
+  "profit_factor": 0.336,
+  "expectancy": -24.77,
+  "gross_pnl": -59.58,
+  "net_pnl": -74.31,
+  "costs": 14.73,
+  "run_id": "7cd6d09e",
+  "params": {
+    "symbols": [
+      "RELIANCE",
+      "TCS",
+      "INFY",
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN",
+      "AXISBANK",
+      "WIPRO"
+    ],
+    "from": "2025-01-01",
+    "to": "2026-06-30",
+    "timeframe": "5min",
+    "walk_forward": false,
+    "n_folds": 1,
+    "train_days": 120,
+    "test_days": 30
+  },
+  "per_fold": [
+    {
+      "total_trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "win_rate": 33.33,
+      "total_return": -0.07,
+      "sharpe": -7.344,
+      "max_drawdown": 0.11,
+      "avg_trade_pct": -1.264,
+      "profit_factor": 0.336,
+      "expectancy": -24.77,
+      "gross_pnl": -59.58,
+      "net_pnl": -74.31,
+      "costs": 14.73,
+      "fold": 1
+    }
+  ],
+  "result_path": ""
+}

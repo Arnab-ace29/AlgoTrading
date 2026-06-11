@@ -1,0 +1,1432 @@
+{
+  "run_id": "283ecbb3",
+  "date": "2026-06-01",
+  "params": {
+    "capital": 100000.0,
+    "risk_profile": "LOW",
+    "use_ml_gates": true,
+    "timeframe": "5min"
+  },
+  "summary": {
+    "total_trades": 5,
+    "wins": 1,
+    "losses": 4,
+    "win_rate": 20.0,
+    "longs": 5,
+    "shorts": 0,
+    "gross_pnl": -482.7,
+    "costs": 190.36,
+    "net_pnl": -673.06,
+    "max_drawdown": 0.69,
+    "return_pct": -0.673,
+    "profit_factor": 0.122,
+    "expectancy": -134.61,
+    "capital": 100000.0,
+    "peak_exposure": 49606.66,
+    "peak_exposure_pct": 49.6,
+    "peak_leverage": 0.5,
+    "uses_margin": false,
+    "cost_parts": {
+      "brokerage": 68.81,
+      "stt": 28.6,
+      "exchange": 6.81,
+      "sebi": 0.24,
+      "stamp": 3.45,
+      "gst": 13.64,
+      "slippage": 68.81,
+      "total": 190.36
+    },
+    "by_exit_reason": {
+      "SL_HIT": {
+        "trades": 4,
+        "net": -766.33
+      },
+      "TARGET_HIT": {
+        "trades": 1,
+        "net": 93.27
+      }
+    }
+  },
+  "universe": [
+    {
+      "symbol": "COALINDIA",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.50856,
+      "reasons": [],
+      "last_score": 0.208,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "TRADED"
+    },
+    {
+      "symbol": "GRASIM",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.51658,
+      "reasons": [],
+      "last_score": -0.3371,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "ARMED"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.50478,
+      "reasons": [],
+      "last_score": -0.805,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED"
+    },
+    {
+      "symbol": "MOTHERSON",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.52563,
+      "reasons": [],
+      "last_score": -0.7875,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED"
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.52559,
+      "reasons": [],
+      "last_score": -0.6301,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED"
+    },
+    {
+      "symbol": "NMDC",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.75473,
+      "reasons": [],
+      "last_score": 0.4525,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "GATED"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.55071,
+      "reasons": [],
+      "last_score": -0.4251,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED"
+    },
+    {
+      "symbol": "HINDALCO",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.55501,
+      "reasons": [],
+      "last_score": 0.4036,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED"
+    },
+    {
+      "symbol": "SAIL",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.5639,
+      "reasons": [],
+      "last_score": -0.1429,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED"
+    },
+    {
+      "symbol": "TECHM",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.66429,
+      "reasons": [],
+      "last_score": 0.0,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED"
+    },
+    {
+      "symbol": "TCS",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.61705,
+      "reasons": [],
+      "last_score": -0.4137,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "RELIANCE",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.5538,
+      "reasons": [],
+      "last_score": -0.0425,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    }
+  ],
+  "trades": [
+    {
+      "symbol": "COALINDIA",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 17,
+      "entry_time": "2026-06-01T09:50:00+05:30",
+      "exit_time": "2026-06-01T10:00:00+05:30",
+      "entry_price": 468.3,
+      "exit_price": 464.58,
+      "notional": 7961.1,
+      "leverage": 0.08,
+      "gross_pnl": -63.24,
+      "cost": 13.16,
+      "net_pnl": -76.4,
+      "return_pct": -0.0096,
+      "bars_held": 2,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.68,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 17 sh (risk \u20b967) | qty:17",
+      "cost_parts": {
+        "brokerage": 4.76,
+        "stt": 1.97,
+        "exchange": 0.47,
+        "sebi": 0.02,
+        "stamp": 0.24,
+        "gst": 0.94,
+        "slippage": 4.76,
+        "total": 13.16
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5211,
+        "rsi_momentum": 0.9236,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "COALINDIA",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 20,
+      "entry_time": "2026-06-01T10:55:00+05:30",
+      "exit_time": "2026-06-01T11:30:00+05:30",
+      "entry_price": 470.7,
+      "exit_price": 476.15,
+      "notional": 9414.0,
+      "leverage": 0.094,
+      "gross_pnl": 109.0,
+      "cost": 15.73,
+      "net_pnl": 93.27,
+      "return_pct": 0.00991,
+      "bars_held": 7,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.6584,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 20 sh (risk \u20b967) | qty:20",
+      "cost_parts": {
+        "brokerage": 5.68,
+        "stt": 2.38,
+        "exchange": 0.56,
+        "sebi": 0.02,
+        "stamp": 0.28,
+        "gst": 1.13,
+        "slippage": 5.68,
+        "total": 15.73
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.4988,
+        "rsi_momentum": 0.8976,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "NMDC",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 327,
+      "entry_time": "2026-06-01T11:05:00+05:30",
+      "exit_time": "2026-06-01T11:55:00+05:30",
+      "entry_price": 89.28,
+      "exit_price": 88.67,
+      "notional": 29194.56,
+      "leverage": 0.292,
+      "gross_pnl": -199.47,
+      "cost": 48.29,
+      "net_pnl": -247.76,
+      "return_pct": -0.00849,
+      "bars_held": 10,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7668,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 328 sh (risk \u20b9200)+RISK_SCALED | qty:327",
+      "cost_parts": {
+        "brokerage": 17.46,
+        "stt": 7.25,
+        "exchange": 1.73,
+        "sebi": 0.06,
+        "stamp": 0.88,
+        "gst": 3.46,
+        "slippage": 17.46,
+        "total": 48.29
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.7445,
+        "rsi_momentum": 0.8613,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "COALINDIA",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 43,
+      "entry_time": "2026-06-01T11:40:00+05:30",
+      "exit_time": "2026-06-01T12:35:00+05:30",
+      "entry_price": 474.7,
+      "exit_price": 471.63,
+      "notional": 20412.1,
+      "leverage": 0.204,
+      "gross_pnl": -132.01,
+      "cost": 33.77,
+      "net_pnl": -165.78,
+      "return_pct": -0.00812,
+      "bars_held": 11,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7158,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 43 sh (risk \u20b9133) | qty:43",
+      "cost_parts": {
+        "brokerage": 12.21,
+        "stt": 5.07,
+        "exchange": 1.21,
+        "sebi": 0.04,
+        "stamp": 0.61,
+        "gst": 2.42,
+        "slippage": 12.21,
+        "total": 33.77
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6057,
+        "rsi_momentum": 0.9073,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "HINDALCO",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 42,
+      "entry_time": "2026-06-01T12:55:00+05:30",
+      "exit_time": "2026-06-01T13:10:00+05:30",
+      "entry_price": 1141.3,
+      "exit_price": 1136.61,
+      "notional": 47934.6,
+      "leverage": 0.479,
+      "gross_pnl": -196.98,
+      "cost": 79.41,
+      "net_pnl": -276.39,
+      "return_pct": -0.00577,
+      "bars_held": 3,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.774,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 42 sh (risk \u20b9200) | qty:42",
+      "cost_parts": {
+        "brokerage": 28.7,
+        "stt": 11.93,
+        "exchange": 2.84,
+        "sebi": 0.1,
+        "stamp": 1.44,
+        "gst": 5.69,
+        "slippage": 28.7,
+        "total": 79.41
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.7657,
+        "rsi_momentum": 0.8528,
+        "mean_reversion": -0.0
+      }
+    }
+  ],
+  "events": [
+    {
+      "t": "2026-06-01T09:00:00",
+      "type": "UNIVERSE_SET",
+      "symbol": "",
+      "detail": {
+        "detail_strategies": {
+          "momentum_vwap": [
+            "TECHM",
+            "TCS",
+            "WIPRO",
+            "HINDALCO",
+            "RELIANCE",
+            "ADANIENT",
+            "ASIANPAINT",
+            "GRASIM",
+            "COALINDIA",
+            "APOLLOHOSP"
+          ],
+          "rsi_momentum": [
+            "NMDC",
+            "TECHM",
+            "TCS",
+            "SAIL",
+            "WIPRO",
+            "RELIANCE",
+            "HINDALCO",
+            "ADANIENT",
+            "MOTHERSON",
+            "ASIANPAINT"
+          ],
+          "mean_reversion": [
+            "NMDC",
+            "TECHM",
+            "TCS",
+            "SAIL",
+            "WIPRO",
+            "RELIANCE",
+            "HINDALCO",
+            "ADANIENT",
+            "MOTHERSON",
+            "ASIANPAINT"
+          ],
+          "ml_macro": [
+            "NMDC",
+            "TECHM",
+            "TCS",
+            "SAIL",
+            "WIPRO",
+            "RELIANCE",
+            "HINDALCO",
+            "ADANIENT",
+            "MOTHERSON",
+            "ASIANPAINT"
+          ]
+        },
+        "n": 13
+      }
+    },
+    {
+      "t": "2026-06-01T09:15:00+05:30",
+      "type": "SESSION_OPEN",
+      "symbol": "",
+      "detail": {
+        "symbols_with_data": [
+          "ADANIENT",
+          "APOLLOHOSP",
+          "ASIANPAINT",
+          "COALINDIA",
+          "GRASIM",
+          "HINDALCO",
+          "MOTHERSON",
+          "NMDC",
+          "RELIANCE",
+          "SAIL",
+          "TCS",
+          "TECHM"
+        ],
+        "bars": 76
+      }
+    },
+    {
+      "t": "2026-06-01T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-01T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-01T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-01T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-01T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5866,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T09:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T09:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.68,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-01T09:50:00+05:30",
+      "type": "ENTRY",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 17,
+        "price": 468.3,
+        "notional": 7961.1,
+        "leverage": 0.08,
+        "sl": 464.58,
+        "tgt": 474.5,
+        "score": 0.68,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 17 sh (risk \u20b967) | qty:17",
+        "reason_chain": [
+          "composite +0.680 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.37), vwap_breakout (+0.26)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5211,
+          "rsi_momentum": 0.9236,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-01T10:00:00+05:30",
+      "type": "EXIT",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "qty": 17,
+        "entry_price": 468.3,
+        "exit_price": 464.58,
+        "reason": "SL_HIT",
+        "gross": -63.24,
+        "cost": 13.16,
+        "net": -76.4,
+        "session_pnl": -76.4
+      }
+    },
+    {
+      "t": "2026-06-01T10:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "SELL",
+        "score": -0.6299,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T10:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "SAIL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5819,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T10:05:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T10:05:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SAIL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T10:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6488,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-01T10:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "SAIL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5799,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T10:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T10:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SAIL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T10:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6233,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-01T10:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "SAIL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5675,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T10:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T10:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SAIL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T10:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "SAIL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5874,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T10:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SAIL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T10:50:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6584,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-01T10:55:00+05:30",
+      "type": "ENTRY",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 20,
+        "price": 470.7,
+        "notional": 9414.0,
+        "leverage": 0.09,
+        "sl": 467.43,
+        "tgt": 476.15,
+        "score": 0.6584,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 20 sh (risk \u20b967) | qty:20",
+        "reason_chain": [
+          "composite +0.658 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.36), vwap_breakout (+0.25)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.4988,
+          "rsi_momentum": 0.8976,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-01T11:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7668,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-01T11:05:00+05:30",
+      "type": "ENTRY",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 327,
+        "price": 89.28,
+        "notional": 29194.56,
+        "leverage": 0.29,
+        "sl": 88.67,
+        "tgt": 90.3,
+        "score": 0.7668,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 328 sh (risk \u20b9200)+RISK_SCALED | qty:327",
+        "reason_chain": [
+          "composite +0.767 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.37), rsi_momentum (+0.34)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.7445,
+          "rsi_momentum": 0.8613,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-01T11:15:00+05:30",
+      "type": "ARMED",
+      "symbol": "GRASIM",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5607,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T11:20:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T11:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "GRASIM",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5584,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T11:25:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "COALINDIA",
+      "detail": {
+        "sl": 472.65,
+        "ltp": 474.4
+      }
+    },
+    {
+      "t": "2026-06-01T11:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T11:30:00+05:30",
+      "type": "EXIT",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "qty": 20,
+        "entry_price": 470.7,
+        "exit_price": 476.15,
+        "reason": "TARGET_HIT",
+        "gross": 109.0,
+        "cost": 15.73,
+        "net": 93.27,
+        "session_pnl": 16.87
+      }
+    },
+    {
+      "t": "2026-06-01T11:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7158,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-01T11:40:00+05:30",
+      "type": "ENTRY",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 43,
+        "price": 474.7,
+        "notional": 20412.1,
+        "leverage": 0.2,
+        "sl": 471.63,
+        "tgt": 479.81,
+        "score": 0.7158,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 43 sh (risk \u20b9133) | qty:43",
+        "reason_chain": [
+          "composite +0.716 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.36), vwap_breakout (+0.30)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6057,
+          "rsi_momentum": 0.9073,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-01T11:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "GRASIM",
+      "detail": {
+        "side": "SELL",
+        "score": -0.558,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T11:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T11:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "GRASIM",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5501,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T11:50:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T11:55:00+05:30",
+      "type": "EXIT",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "BUY",
+        "qty": 327,
+        "entry_price": 89.28,
+        "exit_price": 88.67,
+        "reason": "SL_HIT",
+        "gross": -199.47,
+        "cost": 48.29,
+        "net": -247.76,
+        "session_pnl": -230.89
+      }
+    },
+    {
+      "t": "2026-06-01T12:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5853,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-01T12:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-01T12:35:00+05:30",
+      "type": "EXIT",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "qty": 43,
+        "entry_price": 474.7,
+        "exit_price": 471.63,
+        "reason": "SL_HIT",
+        "gross": -132.01,
+        "cost": 33.77,
+        "net": -165.78,
+        "session_pnl": -396.67
+      }
+    },
+    {
+      "t": "2026-06-01T12:50:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDALCO",
+      "detail": {
+        "side": "BUY",
+        "score": 0.774,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-01T12:55:00+05:30",
+      "type": "ENTRY",
+      "symbol": "HINDALCO",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 42,
+        "price": 1141.3,
+        "notional": 47934.6,
+        "leverage": 0.48,
+        "sl": 1136.61,
+        "tgt": 1149.12,
+        "score": 0.774,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 42 sh (risk \u20b9200) | qty:42",
+        "reason_chain": [
+          "composite +0.774 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.38), rsi_momentum (+0.34)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.7657,
+          "rsi_momentum": 0.8528,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-01T13:10:00+05:30",
+      "type": "EXIT",
+      "symbol": "HINDALCO",
+      "detail": {
+        "side": "BUY",
+        "qty": 42,
+        "entry_price": 1141.3,
+        "exit_price": 1136.61,
+        "reason": "SL_HIT",
+        "gross": -196.98,
+        "cost": 79.41,
+        "net": -276.39,
+        "session_pnl": -673.06
+      }
+    },
+    {
+      "t": "2026-06-01T13:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SAIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SAIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-01T20:55:00+05:30",
+      "type": "SESSION_CLOSE",
+      "symbol": "",
+      "detail": {
+        "session_pnl": -673.06,
+        "trades": 5
+      }
+    }
+  ],
+  "gate_counts": {
+    "breaker:OPENING_BLACKOUT": 4,
+    "sizing/heat": 13,
+    "breaker:MAX_TRADES_PER_DAY": 43
+  },
+  "watchlist": {
+    "momentum_vwap": [
+      "TECHM",
+      "TCS",
+      "WIPRO",
+      "HINDALCO",
+      "RELIANCE",
+      "ADANIENT",
+      "ASIANPAINT",
+      "GRASIM",
+      "COALINDIA",
+      "APOLLOHOSP"
+    ],
+    "rsi_momentum": [
+      "NMDC",
+      "TECHM",
+      "TCS",
+      "SAIL",
+      "WIPRO",
+      "RELIANCE",
+      "HINDALCO",
+      "ADANIENT",
+      "MOTHERSON",
+      "ASIANPAINT"
+    ],
+    "mean_reversion": [
+      "NMDC",
+      "TECHM",
+      "TCS",
+      "SAIL",
+      "WIPRO",
+      "RELIANCE",
+      "HINDALCO",
+      "ADANIENT",
+      "MOTHERSON",
+      "ASIANPAINT"
+    ],
+    "ml_macro": [
+      "NMDC",
+      "TECHM",
+      "TCS",
+      "SAIL",
+      "WIPRO",
+      "RELIANCE",
+      "HINDALCO",
+      "ADANIENT",
+      "MOTHERSON",
+      "ASIANPAINT"
+    ]
+  }
+}

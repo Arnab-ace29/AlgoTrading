@@ -1,0 +1,59 @@
+# ── Broker & Market Data ─────────────────────────────────────────────────────
+upstox-python-sdk==2.14.0
+nsepython==2.7
+yfinance==0.2.54                # fallback / validation data source
+
+# ── Database ──────────────────────────────────────────────────────────────────
+# Operational store is SQLite in WAL mode via the stdlib `sqlite3` (no dependency
+# needed) — it supports concurrent cross-process readers + a writer, so the live
+# runner and the dashboard can share the DB at once (LIVE-06). See data/db.py.
+# DuckDB is now OPTIONAL — only for heavy ad-hoc analytical (OLAP) queries, never
+# on the operational path. Uncomment if you want it for analysis:
+# duckdb==1.2.2
+
+# ── Data & Numerics ───────────────────────────────────────────────────────────
+pandas==2.2.3
+numpy==1.26.4
+ta==0.11.0                      # technical indicators (RSI, MACD, BB, ATR, etc.) — imported by features/indicators.py
+
+# ── Backtesting ───────────────────────────────────────────────────────────────
+# The backtest engine is now a custom event-driven simulator (backtest/engine.py),
+# so vectorbt is NOT required. Kept here (commented) for reference / optional tearsheets.
+# vectorbt==0.26.2 --prefer-binary
+# quantstats==0.0.62
+
+# ── ML (Phase 2) ─────────────────────────────────────────────────────────────
+xgboost==2.1.4
+scikit-learn==1.6.1
+hmmlearn==0.3.3                 # Hidden Markov Model for regime detection
+
+# ── Deep Learning (Phase 2-3) ─────────────────────────────────────────────────
+torch==2.6.0                    # PyTorch for RL agents
+# transformers==4.47.0          # HuggingFace FinBERT — uncomment in Phase 3
+
+# ── Dashboard Backend ────────────────────────────────────────────────────────
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+python-socketio==5.12.1
+httpx==0.28.1                   # async HTTP for OpenAlgo calls
+python-multipart==0.0.20        # FastAPI form data
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+python-dotenv==1.1.0
+pydantic==2.11.5
+pydantic-settings==2.9.1
+schedule==1.2.2                 # post-market job scheduler
+requests==2.32.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
+loguru==0.7.3                   # structured logging
+statsmodels==0.14.4             # cointegration tests (pairs trading Phase 2)
+
+# ── Notifications ─────────────────────────────────────────────────────────────
+# python-telegram-bot==21.10    # uncomment when Telegram alerts are needed
+
+# ── Dev / Test ────────────────────────────────────────────────────────────────
+# Test scripts under scripts/test_*.py run standalone (python scripts/test_x.py)
+# and are also pytest-collectable. The model tests import pytest only to mark
+# skips under collection (optional — standalone runs work without it).
+pytest==8.4.2

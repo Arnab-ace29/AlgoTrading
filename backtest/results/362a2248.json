@@ -1,0 +1,83 @@
+{
+  "total_trades": 27,
+  "wins": 6,
+  "losses": 21,
+  "win_rate": 22.22,
+  "total_return": -1.36,
+  "sharpe": -12.712,
+  "max_drawdown": 1.36,
+  "avg_trade_pct": -0.566,
+  "profit_factor": 0.177,
+  "expectancy": -50.51,
+  "gross_pnl": -932.74,
+  "net_pnl": -1363.82,
+  "costs": 431.08,
+  "run_id": "362a2248",
+  "params": {
+    "symbols": [
+      "RELIANCE",
+      "TCS",
+      "INFY",
+      "HDFCBANK",
+      "ICICIBANK"
+    ],
+    "from": "2024-01-01",
+    "to": "2024-05-10",
+    "timeframe": "5min",
+    "walk_forward": true,
+    "n_folds": 3,
+    "train_days": 78,
+    "test_days": 17
+  },
+  "per_fold": [
+    {
+      "total_trades": 8,
+      "wins": 2,
+      "losses": 6,
+      "win_rate": 25.0,
+      "total_return": -0.41,
+      "sharpe": -11.529,
+      "max_drawdown": 0.41,
+      "avg_trade_pct": -0.417,
+      "profit_factor": 0.135,
+      "expectancy": -50.7,
+      "gross_pnl": -260.72,
+      "net_pnl": -405.58,
+      "costs": 144.86,
+      "fold": 1
+    },
+    {
+      "total_trades": 9,
+      "wins": 2,
+      "losses": 7,
+      "win_rate": 22.22,
+      "total_return": -0.56,
+      "sharpe": -21.755,
+      "max_drawdown": 0.61,
+      "avg_trade_pct": -0.808,
+      "profit_factor": 0.164,
+      "expectancy": -62.7,
+      "gross_pnl": -424.47,
+      "net_pnl": -564.31,
+      "costs": 139.84,
+      "fold": 2
+    },
+    {
+      "total_trades": 10,
+      "wins": 2,
+      "losses": 8,
+      "win_rate": 20.0,
+      "total_return": -0.39,
+      "sharpe": -9.449,
+      "max_drawdown": 0.44,
+      "avg_trade_pct": -0.468,
+      "profit_factor": 0.234,
+      "expectancy": -39.39,
+      "gross_pnl": -247.55,
+      "net_pnl": -393.93,
+      "costs": 146.38,
+      "fold": 3
+    }
+  ],
+  "result_path": ""
+}

@@ -1,0 +1,51 @@
+# ── Secrets — NEVER commit these ─────────────────────────────────────────────
+.env
+*.env
+
+# ── Database ──────────────────────────────────────────────────────────────────
+data/algo_trading.db
+data/*.db
+data/*.duckdb
+data/*.sqlite
+
+# ── Trained models ────────────────────────────────────────────────────────────
+models/saved/*.pkl
+models/saved/*.json
+models/saved/backups/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# ── Backtest results ─────────────────────────────────────────────────────────
+backtest/results/*.html
+backtest/results/*.csv
+!backtest/results/.gitkeep
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+
+# ── Node (dashboard frontend) ─────────────────────────────────────────────────
+dashboard/frontend/node_modules/
+dashboard/frontend/dist/
+dashboard/frontend/.env

@@ -1,0 +1,586 @@
+{
+  "run_id": "03ac5031",
+  "date": "2026-06-03",
+  "params": {
+    "capital": 100000.0,
+    "risk_profile": "MEDIUM",
+    "use_ml_gates": true,
+    "timeframe": "5min"
+  },
+  "summary": {
+    "total_trades": 2,
+    "wins": 1,
+    "losses": 1,
+    "win_rate": 50.0,
+    "gross_pnl": 17.94,
+    "costs": 47.74,
+    "net_pnl": -29.8,
+    "max_drawdown": 0.09,
+    "return_pct": -0.03,
+    "profit_factor": 0.661,
+    "expectancy": -14.9,
+    "cost_parts": {
+      "brokerage": 17.24,
+      "stt": 7.19,
+      "exchange": 1.71,
+      "sebi": 0.06,
+      "stamp": 0.87,
+      "gst": 3.43,
+      "slippage": 17.24,
+      "total": 47.74
+    },
+    "by_exit_reason": {
+      "TARGET_HIT": {
+        "trades": 1,
+        "net": 58.02
+      },
+      "SL_HIT": {
+        "trades": 1,
+        "net": -87.82
+      }
+    }
+  },
+  "universe": [
+    {
+      "symbol": "ICICIBANK",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.3883,
+      "reasons": [],
+      "last_score": 0.5536,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED"
+    },
+    {
+      "symbol": "SBIN",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.29187,
+      "reasons": [],
+      "last_score": 0.3538,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "GATED"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.09475,
+      "reasons": [],
+      "last_score": 0.1819,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "TCS",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.37308,
+      "reasons": [],
+      "last_score": -0.083,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "RELIANCE",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.39506,
+      "reasons": [],
+      "last_score": -0.0667,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "INFY",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.51166,
+      "reasons": [],
+      "last_score": 0.0128,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    }
+  ],
+  "trades": [
+    {
+      "symbol": "SBIN",
+      "side": "BUY",
+      "qty": 13,
+      "entry_time": "2026-06-03T14:40:00+05:30",
+      "exit_time": "2026-06-03T15:00:00+05:30",
+      "entry_price": 964.25,
+      "exit_price": 970.32,
+      "gross_pnl": 78.91,
+      "cost": 20.89,
+      "net_pnl": 58.02,
+      "return_pct": 0.00463,
+      "bars_held": 4,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.6837,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 13 sh (risk \u20b962) | qty:13",
+      "cost_parts": {
+        "brokerage": 7.54,
+        "stt": 3.15,
+        "exchange": 0.75,
+        "sebi": 0.03,
+        "stamp": 0.38,
+        "gst": 1.5,
+        "slippage": 7.54,
+        "total": 20.89
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6516,
+        "rsi_momentum": 0.7698,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "ICICIBANK",
+      "side": "BUY",
+      "qty": 13,
+      "entry_time": "2026-06-03T14:25:00+05:30",
+      "exit_time": "2026-06-03T15:05:00+05:30",
+      "entry_price": 1246.4,
+      "exit_price": 1241.71,
+      "gross_pnl": -60.97,
+      "cost": 26.85,
+      "net_pnl": -87.82,
+      "return_pct": -0.00542,
+      "bars_held": 8,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.6726,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 13 sh (risk \u20b962) | qty:13",
+      "cost_parts": {
+        "brokerage": 9.7,
+        "stt": 4.04,
+        "exchange": 0.96,
+        "sebi": 0.03,
+        "stamp": 0.49,
+        "gst": 1.93,
+        "slippage": 9.7,
+        "total": 26.85
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6456,
+        "rsi_momentum": 0.7494,
+        "mean_reversion": -0.0
+      }
+    }
+  ],
+  "events": [
+    {
+      "t": "2026-06-03T09:00:00",
+      "type": "UNIVERSE_SET",
+      "symbol": "",
+      "detail": {
+        "detail_strategies": {
+          "momentum_vwap": [
+            "WIPRO",
+            "INFY",
+            "RELIANCE",
+            "ICICIBANK",
+            "TCS",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK"
+          ],
+          "rsi_momentum": [
+            "WIPRO",
+            "INFY",
+            "RELIANCE",
+            "ICICIBANK",
+            "TCS",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK"
+          ],
+          "mean_reversion": [
+            "WIPRO",
+            "INFY",
+            "RELIANCE",
+            "ICICIBANK",
+            "TCS",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK"
+          ],
+          "ml_macro": [
+            "WIPRO",
+            "INFY",
+            "RELIANCE",
+            "ICICIBANK",
+            "TCS",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK"
+          ]
+        },
+        "n": 8
+      }
+    },
+    {
+      "t": "2026-06-03T09:15:00+05:30",
+      "type": "SESSION_OPEN",
+      "symbol": "",
+      "detail": {
+        "symbols_with_data": [
+          "HDFCBANK",
+          "ICICIBANK",
+          "INFY",
+          "RELIANCE",
+          "SBIN",
+          "TCS"
+        ],
+        "bars": 76
+      }
+    },
+    {
+      "t": "2026-06-03T13:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "score": 0.593,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T13:05:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-03T13:55:00+05:30",
+      "type": "ARMED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5814,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T13:55:00+05:30",
+      "type": "ARMED",
+      "symbol": "SBIN",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5935,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T14:00:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-03T14:00:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SBIN",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-03T14:05:00+05:30",
+      "type": "ARMED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5962,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T14:10:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-03T14:10:00+05:30",
+      "type": "ARMED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5941,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T14:15:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-03T14:15:00+05:30",
+      "type": "ARMED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6006,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T14:20:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-03T14:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6726,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T14:25:00+05:30",
+      "type": "ENTRY",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "qty": 13,
+        "price": 1246.4,
+        "sl": 1241.71,
+        "tgt": 1252.65,
+        "score": 0.6726,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 13 sh (risk \u20b962) | qty:13",
+        "reason_chain": [
+          "composite +0.673 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.32), rsi_momentum (+0.30)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6456,
+          "rsi_momentum": 0.7494,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-03T14:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "SBIN",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6221,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T14:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "SBIN",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-03T14:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "SBIN",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6837,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-03T14:40:00+05:30",
+      "type": "ENTRY",
+      "symbol": "SBIN",
+      "detail": {
+        "side": "BUY",
+        "qty": 13,
+        "price": 964.25,
+        "sl": 959.7,
+        "tgt": 970.32,
+        "score": 0.6837,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 13 sh (risk \u20b962) | qty:13",
+        "reason_chain": [
+          "composite +0.684 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.33), rsi_momentum (+0.31)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6516,
+          "rsi_momentum": 0.7698,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-03T14:45:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "SBIN",
+      "detail": {
+        "sl": 965.63,
+        "ltp": 967.75
+      }
+    },
+    {
+      "t": "2026-06-03T14:55:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "SBIN",
+      "detail": {
+        "sl": 966.33,
+        "ltp": 968.45
+      }
+    },
+    {
+      "t": "2026-06-03T15:00:00+05:30",
+      "type": "EXIT",
+      "symbol": "SBIN",
+      "detail": {
+        "side": "BUY",
+        "qty": 13,
+        "entry_price": 964.25,
+        "exit_price": 970.32,
+        "reason": "TARGET_HIT",
+        "gross": 78.91,
+        "cost": 20.89,
+        "net": 58.02,
+        "session_pnl": 58.02
+      }
+    },
+    {
+      "t": "2026-06-03T15:05:00+05:30",
+      "type": "EXIT",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "qty": 13,
+        "entry_price": 1246.4,
+        "exit_price": 1241.71,
+        "reason": "SL_HIT",
+        "gross": -60.97,
+        "cost": 26.85,
+        "net": -87.82,
+        "session_pnl": -29.8
+      }
+    },
+    {
+      "t": "2026-06-03T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SBIN",
+      "detail": {
+        "reason": "CLOSING_BLACKOUT (force-exit zone)"
+      }
+    },
+    {
+      "t": "2026-06-03T15:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "reason": "CLOSING_BLACKOUT (force-exit zone)"
+      }
+    },
+    {
+      "t": "2026-06-03T20:55:00+05:30",
+      "type": "SESSION_CLOSE",
+      "symbol": "",
+      "detail": {
+        "session_pnl": -29.8,
+        "trades": 2
+      }
+    }
+  ],
+  "gate_counts": {
+    "sizing/heat": 7,
+    "breaker:CLOSING_BLACKOUT": 2
+  },
+  "watchlist": {
+    "momentum_vwap": [
+      "WIPRO",
+      "INFY",
+      "RELIANCE",
+      "ICICIBANK",
+      "TCS",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK"
+    ],
+    "rsi_momentum": [
+      "WIPRO",
+      "INFY",
+      "RELIANCE",
+      "ICICIBANK",
+      "TCS",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK"
+    ],
+    "mean_reversion": [
+      "WIPRO",
+      "INFY",
+      "RELIANCE",
+      "ICICIBANK",
+      "TCS",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK"
+    ],
+    "ml_macro": [
+      "WIPRO",
+      "INFY",
+      "RELIANCE",
+      "ICICIBANK",
+      "TCS",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK"
+    ]
+  }
+}

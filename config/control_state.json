@@ -1,0 +1,9 @@
+{
+  "kill_switch": false,
+  "trading_enabled": true,
+  "weights_override": {},
+  "disabled_signals": [],
+  "risk_profile": null,
+  "capital": 100000.0,
+  "updated_at": "2026-06-07T13:38:14.102439+00:00"
+}

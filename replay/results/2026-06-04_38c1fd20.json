@@ -1,0 +1,1744 @@
+{
+  "run_id": "38c1fd20",
+  "date": "2026-06-04",
+  "params": {
+    "capital": 100000.0,
+    "risk_profile": "LOW",
+    "use_ml_gates": true,
+    "timeframe": "5min"
+  },
+  "summary": {
+    "total_trades": 5,
+    "wins": 5,
+    "losses": 0,
+    "win_rate": 100.0,
+    "longs": 4,
+    "shorts": 1,
+    "gross_pnl": 764.41,
+    "costs": 249.22,
+    "net_pnl": 515.19,
+    "max_drawdown": 0.0,
+    "return_pct": 0.515,
+    "profit_factor": null,
+    "expectancy": 103.04,
+    "capital": 100000.0,
+    "peak_exposure": 66608.76,
+    "peak_exposure_pct": 66.6,
+    "peak_leverage": 0.67,
+    "uses_margin": false,
+    "cost_parts": {
+      "brokerage": 90.05,
+      "stt": 37.55,
+      "exchange": 8.92,
+      "sebi": 0.29,
+      "stamp": 4.51,
+      "gst": 17.86,
+      "slippage": 90.05,
+      "total": 249.22
+    },
+    "by_exit_reason": {
+      "SL_HIT": {
+        "trades": 2,
+        "net": 48.86
+      },
+      "TARGET_HIT": {
+        "trades": 3,
+        "net": 466.33
+      }
+    }
+  },
+  "universe": [
+    {
+      "symbol": "IDFCFIRSTB",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.47503,
+      "reasons": [],
+      "last_score": 0.1086,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "TRADED"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.58239,
+      "reasons": [],
+      "last_score": 0.2396,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "ARMED"
+    },
+    {
+      "symbol": "GRASIM",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.45094,
+      "reasons": [],
+      "last_score": -0.8058,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED"
+    },
+    {
+      "symbol": "GAIL",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.54831,
+      "reasons": [],
+      "last_score": 0.7151,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED"
+    },
+    {
+      "symbol": "HINDALCO",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.46915,
+      "reasons": [],
+      "last_score": 0.6724,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED"
+    },
+    {
+      "symbol": "MOTHERSON",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.5067,
+      "reasons": [],
+      "last_score": -0.6633,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.40433,
+      "reasons": [],
+      "last_score": -0.3431,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED"
+    },
+    {
+      "symbol": "NMDC",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.56144,
+      "reasons": [],
+      "last_score": -0.3377,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED"
+    },
+    {
+      "symbol": "COALINDIA",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.61721,
+      "reasons": [],
+      "last_score": -0.0222,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED"
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.42238,
+      "reasons": [],
+      "last_score": 0.0084,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED"
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.48236,
+      "reasons": [],
+      "last_score": -0.3614,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "TCS",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.63324,
+      "reasons": [],
+      "last_score": -0.019,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "INFY",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.5105,
+      "reasons": [],
+      "last_score": -0.0023,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    }
+  ],
+  "trades": [
+    {
+      "symbol": "MOTHERSON",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 147,
+      "entry_time": "2026-06-04T09:50:00+05:30",
+      "exit_time": "2026-06-04T10:30:00+05:30",
+      "entry_price": 146.3,
+      "exit_price": 146.78,
+      "notional": 21506.1,
+      "leverage": 0.215,
+      "gross_pnl": 70.44,
+      "cost": 35.78,
+      "net_pnl": 34.66,
+      "return_pct": 0.00161,
+      "bars_held": 8,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7041,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 147 sh (risk \u20b9133) | qty:147",
+      "cost_parts": {
+        "brokerage": 12.92,
+        "stt": 5.39,
+        "exchange": 1.28,
+        "sebi": 0.04,
+        "stamp": 0.65,
+        "gst": 2.56,
+        "slippage": 12.92,
+        "total": 35.78
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5592,
+        "rsi_momentum": 0.9364,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 142,
+      "entry_time": "2026-06-04T09:50:00+05:30",
+      "exit_time": "2026-06-04T11:00:00+05:30",
+      "entry_price": 72.28,
+      "exit_price": 72.5,
+      "notional": 10263.76,
+      "leverage": 0.103,
+      "gross_pnl": 31.27,
+      "cost": 17.07,
+      "net_pnl": 14.2,
+      "return_pct": 0.00138,
+      "bars_held": 14,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.6559,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 142 sh (risk \u20b967) | qty:142",
+      "cost_parts": {
+        "brokerage": 6.17,
+        "stt": 2.57,
+        "exchange": 0.61,
+        "sebi": 0.02,
+        "stamp": 0.31,
+        "gst": 1.22,
+        "slippage": 6.17,
+        "total": 17.07
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.4564,
+        "rsi_momentum": 0.9442,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "COALINDIA",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 118,
+      "entry_time": "2026-06-04T10:55:00+05:30",
+      "exit_time": "2026-06-04T11:25:00+05:30",
+      "entry_price": 477.5,
+      "exit_price": 480.32,
+      "notional": 56345.0,
+      "leverage": 0.563,
+      "gross_pnl": 332.76,
+      "cost": 93.87,
+      "net_pnl": 238.89,
+      "return_pct": 0.00424,
+      "bars_held": 6,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.8137,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 118 sh (risk \u20b9200) | qty:118",
+      "cost_parts": {
+        "brokerage": 33.91,
+        "stt": 14.17,
+        "exchange": 3.36,
+        "sebi": 0.11,
+        "stamp": 1.69,
+        "gst": 6.73,
+        "slippage": 33.91,
+        "total": 93.87
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.7719,
+        "rsi_momentum": 0.9443,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "side": "SELL",
+      "direction": "SHORT",
+      "qty": 36,
+      "entry_time": "2026-06-04T12:40:00+05:30",
+      "exit_time": "2026-06-04T13:15:00+05:30",
+      "entry_price": 1302.0,
+      "exit_price": 1295.91,
+      "notional": 46872.0,
+      "leverage": 0.469,
+      "gross_pnl": 219.24,
+      "cost": 77.62,
+      "net_pnl": 141.62,
+      "return_pct": 0.00302,
+      "bars_held": 7,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": -0.7003,
+      "regime": "TRENDING_DOWN",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 36 sh (risk \u20b9133) | qty:36",
+      "cost_parts": {
+        "brokerage": 28.06,
+        "stt": 11.66,
+        "exchange": 2.78,
+        "sebi": 0.09,
+        "stamp": 1.41,
+        "gst": 5.57,
+        "slippage": 28.06,
+        "total": 77.62
+      },
+      "signal_scores": {
+        "vwap_breakout": -0.6363,
+        "rsi_momentum": -0.8804,
+        "mean_reversion": 0.0
+      }
+    },
+    {
+      "symbol": "GAIL",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 90,
+      "entry_time": "2026-06-04T12:05:00+05:30",
+      "exit_time": "2026-06-04T14:55:00+05:30",
+      "entry_price": 165.82,
+      "exit_price": 167.05,
+      "notional": 14923.8,
+      "leverage": 0.149,
+      "gross_pnl": 110.7,
+      "cost": 24.88,
+      "net_pnl": 85.82,
+      "return_pct": 0.00575,
+      "bars_held": 34,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.6964,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 90 sh (risk \u20b967) | qty:90",
+      "cost_parts": {
+        "brokerage": 8.99,
+        "stt": 3.76,
+        "exchange": 0.89,
+        "sebi": 0.03,
+        "stamp": 0.45,
+        "gst": 1.78,
+        "slippage": 8.99,
+        "total": 24.88
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5816,
+        "rsi_momentum": 0.889,
+        "mean_reversion": -0.0
+      }
+    }
+  ],
+  "events": [
+    {
+      "t": "2026-06-04T09:00:00",
+      "type": "UNIVERSE_SET",
+      "symbol": "",
+      "detail": {
+        "detail_strategies": {
+          "momentum_vwap": [
+            "TCS",
+            "COALINDIA",
+            "APOLLOHOSP",
+            "WIPRO",
+            "INFY",
+            "ADANIENT",
+            "HINDALCO",
+            "GRASIM",
+            "JSWSTEEL",
+            "ADANIPORTS"
+          ],
+          "rsi_momentum": [
+            "TCS",
+            "COALINDIA",
+            "APOLLOHOSP",
+            "WIPRO",
+            "NMDC",
+            "GAIL",
+            "INFY",
+            "MOTHERSON",
+            "ADANIENT",
+            "IDFCFIRSTB"
+          ],
+          "mean_reversion": [
+            "TCS",
+            "COALINDIA",
+            "APOLLOHOSP",
+            "WIPRO",
+            "NMDC",
+            "GAIL",
+            "INFY",
+            "MOTHERSON",
+            "ADANIENT",
+            "IDFCFIRSTB"
+          ],
+          "ml_macro": [
+            "TCS",
+            "COALINDIA",
+            "APOLLOHOSP",
+            "WIPRO",
+            "NMDC",
+            "GAIL",
+            "INFY",
+            "MOTHERSON",
+            "ADANIENT",
+            "IDFCFIRSTB"
+          ]
+        },
+        "n": 14
+      }
+    },
+    {
+      "t": "2026-06-04T09:15:00+05:30",
+      "type": "SESSION_OPEN",
+      "symbol": "",
+      "detail": {
+        "symbols_with_data": [
+          "ADANIENT",
+          "ADANIPORTS",
+          "APOLLOHOSP",
+          "COALINDIA",
+          "GAIL",
+          "GRASIM",
+          "HINDALCO",
+          "IDFCFIRSTB",
+          "INFY",
+          "JSWSTEEL",
+          "MOTHERSON",
+          "NMDC",
+          "TCS"
+        ],
+        "bars": 76
+      }
+    },
+    {
+      "t": "2026-06-04T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-04T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IDFCFIRSTB",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-04T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-04T09:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "IDFCFIRSTB",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6559,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T09:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7041,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T09:50:00+05:30",
+      "type": "ENTRY",
+      "symbol": "IDFCFIRSTB",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 142,
+        "price": 72.28,
+        "notional": 10263.76,
+        "leverage": 0.1,
+        "sl": 71.81,
+        "tgt": 73.06,
+        "score": 0.6559,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 142 sh (risk \u20b967) | qty:142",
+        "reason_chain": [
+          "composite +0.656 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.38), vwap_breakout (+0.23)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.4564,
+          "rsi_momentum": 0.9442,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-04T09:50:00+05:30",
+      "type": "ENTRY",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 147,
+        "price": 146.3,
+        "notional": 21506.1,
+        "leverage": 0.22,
+        "sl": 145.4,
+        "tgt": 147.8,
+        "score": 0.7041,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 147 sh (risk \u20b9133) | qty:147",
+        "reason_chain": [
+          "composite +0.704 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.37), vwap_breakout (+0.28)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5592,
+          "rsi_momentum": 0.9364,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-04T09:55:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6334,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T10:00:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T10:05:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "sl": 146.62,
+        "ltp": 147.1
+      }
+    },
+    {
+      "t": "2026-06-04T10:10:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "sl": 146.64,
+        "ltp": 147.12
+      }
+    },
+    {
+      "t": "2026-06-04T10:20:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "sl": 146.78,
+        "ltp": 147.26
+      }
+    },
+    {
+      "t": "2026-06-04T10:30:00+05:30",
+      "type": "EXIT",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "side": "BUY",
+        "qty": 147,
+        "entry_price": 146.3,
+        "exit_price": 146.78,
+        "reason": "SL_HIT",
+        "gross": 70.44,
+        "cost": 35.78,
+        "net": 34.66,
+        "session_pnl": 34.66
+      }
+    },
+    {
+      "t": "2026-06-04T10:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5745,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T10:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T10:45:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "IDFCFIRSTB",
+      "detail": {
+        "sl": 72.41,
+        "ltp": 72.66
+      }
+    },
+    {
+      "t": "2026-06-04T10:50:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "IDFCFIRSTB",
+      "detail": {
+        "sl": 72.5,
+        "ltp": 72.75
+      }
+    },
+    {
+      "t": "2026-06-04T10:50:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.8137,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T10:55:00+05:30",
+      "type": "ENTRY",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 118,
+        "price": 477.5,
+        "notional": 56345.0,
+        "leverage": 0.56,
+        "sl": 475.81,
+        "tgt": 480.32,
+        "score": 0.8137,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 118 sh (risk \u20b9200) | qty:118",
+        "reason_chain": [
+          "composite +0.814 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.39), rsi_momentum (+0.38)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.7719,
+          "rsi_momentum": 0.9443,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-04T11:00:00+05:30",
+      "type": "EXIT",
+      "symbol": "IDFCFIRSTB",
+      "detail": {
+        "side": "BUY",
+        "qty": 142,
+        "entry_price": 72.28,
+        "exit_price": 72.5,
+        "reason": "SL_HIT",
+        "gross": 31.27,
+        "cost": 17.07,
+        "net": 14.2,
+        "session_pnl": 48.86
+      }
+    },
+    {
+      "t": "2026-06-04T11:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5535,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:05:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "side": "SELL",
+        "score": -0.6121,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5692,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:20:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5543,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:25:00+05:30",
+      "type": "EXIT",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "qty": 118,
+        "entry_price": 477.5,
+        "exit_price": 480.32,
+        "reason": "TARGET_HIT",
+        "gross": 332.76,
+        "cost": 93.87,
+        "net": 238.89,
+        "session_pnl": 287.75
+      }
+    },
+    {
+      "t": "2026-06-04T11:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "APOLLOHOSP",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:25:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5652,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.6347,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5583,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5863,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:50:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:50:00+05:30",
+      "type": "ARMED",
+      "symbol": "NMDC",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5751,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T11:55:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T11:55:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5833,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T12:00:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T12:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6389,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T12:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "GAIL",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6964,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T12:05:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T12:05:00+05:30",
+      "type": "ENTRY",
+      "symbol": "GAIL",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 90,
+        "price": 165.82,
+        "notional": 14923.8,
+        "leverage": 0.15,
+        "sl": 165.08,
+        "tgt": 167.05,
+        "score": 0.6964,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 90 sh (risk \u20b967) | qty:90",
+        "reason_chain": [
+          "composite +0.696 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.36), vwap_breakout (+0.29)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5816,
+          "rsi_momentum": 0.889,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-04T12:05:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6175,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T12:10:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T12:10:00+05:30",
+      "type": "ARMED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6121,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-04T12:15:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-04T12:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "side": "SELL",
+        "score": -0.7003,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-04T12:40:00+05:30",
+      "type": "ENTRY",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "side": "SELL",
+        "direction": "SHORT",
+        "qty": 36,
+        "price": 1302.0,
+        "notional": 46872.0,
+        "leverage": 0.47,
+        "sl": 1305.65,
+        "tgt": 1295.91,
+        "score": -0.7003,
+        "regime": "TRENDING_DOWN",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 36 sh (risk \u20b9133) | qty:36",
+        "reason_chain": [
+          "composite -0.700 @ TRENDING_DOWN",
+          "top signals: rsi_momentum (-0.35), vwap_breakout (-0.32)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": -0.6363,
+          "rsi_momentum": -0.8804,
+          "mean_reversion": 0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-04T12:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T12:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T12:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T12:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T12:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:10:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "sl": 1298.05,
+        "ltp": 1296.1
+      }
+    },
+    {
+      "t": "2026-06-04T13:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:15:00+05:30",
+      "type": "EXIT",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "side": "SELL",
+        "qty": 36,
+        "entry_price": 1302.0,
+        "exit_price": 1295.91,
+        "reason": "TARGET_HIT",
+        "gross": 219.24,
+        "cost": 77.62,
+        "net": 141.62,
+        "session_pnl": 429.37
+      }
+    },
+    {
+      "t": "2026-06-04T13:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:50:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "GAIL",
+      "detail": {
+        "sl": 166.15,
+        "ltp": 166.54
+      }
+    },
+    {
+      "t": "2026-06-04T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:00:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "GAIL",
+      "detail": {
+        "sl": 166.33,
+        "ltp": 166.72
+      }
+    },
+    {
+      "t": "2026-06-04T14:05:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "GAIL",
+      "detail": {
+        "sl": 166.37,
+        "ltp": 166.76
+      }
+    },
+    {
+      "t": "2026-06-04T14:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "JSWSTEEL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:55:00+05:30",
+      "type": "EXIT",
+      "symbol": "GAIL",
+      "detail": {
+        "side": "BUY",
+        "qty": 90,
+        "entry_price": 165.82,
+        "exit_price": 167.05,
+        "reason": "TARGET_HIT",
+        "gross": 110.7,
+        "cost": 24.88,
+        "net": 85.82,
+        "session_pnl": 515.19
+      }
+    },
+    {
+      "t": "2026-06-04T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GAIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COALINDIA",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GAIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GAIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "MOTHERSON",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (5/5)"
+      }
+    },
+    {
+      "t": "2026-06-04T20:55:00+05:30",
+      "type": "SESSION_CLOSE",
+      "symbol": "",
+      "detail": {
+        "session_pnl": 515.19,
+        "trades": 5
+      }
+    }
+  ],
+  "gate_counts": {
+    "breaker:OPENING_BLACKOUT": 3,
+    "sizing/heat": 15,
+    "breaker:MAX_TRADES_PER_DAY": 68
+  },
+  "watchlist": {
+    "momentum_vwap": [
+      "TCS",
+      "COALINDIA",
+      "APOLLOHOSP",
+      "WIPRO",
+      "INFY",
+      "ADANIENT",
+      "HINDALCO",
+      "GRASIM",
+      "JSWSTEEL",
+      "ADANIPORTS"
+    ],
+    "rsi_momentum": [
+      "TCS",
+      "COALINDIA",
+      "APOLLOHOSP",
+      "WIPRO",
+      "NMDC",
+      "GAIL",
+      "INFY",
+      "MOTHERSON",
+      "ADANIENT",
+      "IDFCFIRSTB"
+    ],
+    "mean_reversion": [
+      "TCS",
+      "COALINDIA",
+      "APOLLOHOSP",
+      "WIPRO",
+      "NMDC",
+      "GAIL",
+      "INFY",
+      "MOTHERSON",
+      "ADANIENT",
+      "IDFCFIRSTB"
+    ],
+    "ml_macro": [
+      "TCS",
+      "COALINDIA",
+      "APOLLOHOSP",
+      "WIPRO",
+      "NMDC",
+      "GAIL",
+      "INFY",
+      "MOTHERSON",
+      "ADANIENT",
+      "IDFCFIRSTB"
+    ]
+  }
+}

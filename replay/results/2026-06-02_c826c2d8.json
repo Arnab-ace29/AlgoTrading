@@ -1,0 +1,3237 @@
+{
+  "run_id": "c826c2d8",
+  "date": "2026-06-02",
+  "params": {
+    "capital": 100000.0,
+    "risk_profile": "LOW",
+    "use_ml_gates": true,
+    "use_margin": false,
+    "timeframe": "5min"
+  },
+  "summary": {
+    "total_trades": 7,
+    "wins": 4,
+    "losses": 3,
+    "win_rate": 57.14,
+    "longs": 6,
+    "shorts": 1,
+    "gross_pnl": 377.45,
+    "costs": 221.8,
+    "net_pnl": 155.65,
+    "max_drawdown": 0.3,
+    "return_pct": 0.156,
+    "profit_factor": 1.337,
+    "expectancy": 22.24,
+    "capital": 100000.0,
+    "peak_exposure": 133171.6,
+    "peak_exposure_pct": 133.2,
+    "peak_leverage": 1.33,
+    "uses_margin": true,
+    "cost_parts": {
+      "brokerage": 80.13,
+      "stt": 33.48,
+      "exchange": 7.93,
+      "sebi": 0.25,
+      "stamp": 3.99,
+      "gst": 15.9,
+      "slippage": 80.13,
+      "total": 221.8
+    },
+    "by_exit_reason": {
+      "SL_HIT": {
+        "trades": 5,
+        "net": -320.86
+      },
+      "TARGET_HIT": {
+        "trades": 2,
+        "net": 476.51
+      }
+    }
+  },
+  "universe": [
+    {
+      "symbol": "COFORGE",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.57971,
+      "reasons": [],
+      "last_score": -0.2201,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "TRADED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "TATAELXSI",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.69832,
+      "reasons": [],
+      "last_score": 0.8207,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "PTCIL",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.84597,
+      "reasons": [],
+      "last_score": 0.7991,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "IFCI",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.71243,
+      "reasons": [],
+      "last_score": 0.7927,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "GRASIM",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.45159,
+      "reasons": [],
+      "last_score": 0.7623,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "TECHM",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.55306,
+      "reasons": [],
+      "last_score": -0.7063,
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.45044,
+      "reasons": [],
+      "last_score": 0.6154,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ACMESOLAR",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.73194,
+      "reasons": [],
+      "last_score": 0.4702,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "SKYGOLD",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.68712,
+      "reasons": [],
+      "last_score": 0.4402,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.58928,
+      "reasons": [],
+      "last_score": 0.4234,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.47252,
+      "reasons": [],
+      "last_score": 0.4054,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "NSLNISP",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.70476,
+      "reasons": [],
+      "last_score": -0.3961,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "EXIDEIND",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.57752,
+      "reasons": [],
+      "last_score": 0.3691,
+      "direction": "NEUTRAL",
+      "regime": "TRENDING_UP",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "SAMMAANCAP",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.60149,
+      "reasons": [],
+      "last_score": -0.3673,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "SKIPPER",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.69217,
+      "reasons": [],
+      "last_score": 0.1884,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "NBCC",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.68563,
+      "reasons": [],
+      "last_score": 0.0962,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "HINDALCO",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.53875,
+      "reasons": [],
+      "last_score": 0.056,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "NMDC",
+      "strategies": [
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.75567,
+      "reasons": [],
+      "last_score": -0.0556,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "HCLTECH",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.57889,
+      "reasons": [],
+      "last_score": -0.0442,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "DATAMATICS",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.74135,
+      "reasons": [],
+      "last_score": 0.0151,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "PERSISTENT",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.57388,
+      "reasons": [],
+      "last_score": 0.0,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "GATED",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "WIPRO",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.59365,
+      "reasons": [],
+      "last_score": -0.307,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "INFY",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.68756,
+      "reasons": [],
+      "last_score": 0.1395,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "TCS",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.58285,
+      "reasons": [],
+      "last_score": -0.0896,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    }
+  ],
+  "trades": [
+    {
+      "symbol": "TATAELXSI",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 5,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:45:00+05:30",
+      "entry_price": 4382.1,
+      "exit_price": 4403.91,
+      "notional": 21910.5,
+      "leverage": 0.219,
+      "gross_pnl": 109.07,
+      "cost": 36.48,
+      "net_pnl": 72.59,
+      "return_pct": 0.00331,
+      "bars_held": 2,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7208,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 5 sh (risk \u20b9133) | qty:5",
+      "cost_parts": {
+        "brokerage": 13.18,
+        "stt": 5.5,
+        "exchange": 1.3,
+        "sebi": 0.04,
+        "stamp": 0.66,
+        "gst": 2.61,
+        "slippage": 13.18,
+        "total": 36.48
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6282,
+        "rsi_momentum": 0.8916,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 1.0,
+      "margin_required": 21910.5
+    },
+    {
+      "symbol": "ADANIENT",
+      "side": "SELL",
+      "direction": "SHORT",
+      "qty": 11,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:50:00+05:30",
+      "entry_price": 2878.2,
+      "exit_price": 2894.03,
+      "notional": 31660.2,
+      "leverage": 0.317,
+      "gross_pnl": -174.13,
+      "cost": 52.73,
+      "net_pnl": -226.86,
+      "return_pct": -0.00717,
+      "bars_held": 3,
+      "exit_reason": "SL_HIT",
+      "entry_score": -0.9049,
+      "regime": "TRENDING_DOWN",
+      "sizing_note": "Tier:3LOT(>=0.75) | 11 sh (risk \u20b9200) | qty:11",
+      "cost_parts": {
+        "brokerage": 19.05,
+        "stt": 7.96,
+        "exchange": 1.89,
+        "sebi": 0.06,
+        "stamp": 0.95,
+        "gst": 3.78,
+        "slippage": 19.05,
+        "total": 52.73
+      },
+      "signal_scores": {
+        "vwap_breakout": -1.0,
+        "rsi_momentum": -0.9373,
+        "mean_reversion": 0.0
+      },
+      "margin_multiplier": 1.0,
+      "margin_required": 31660.2
+    },
+    {
+      "symbol": "NBCC",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 60,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:50:00+05:30",
+      "entry_price": 105.7,
+      "exit_price": 104.59,
+      "notional": 6342.0,
+      "leverage": 0.063,
+      "gross_pnl": -66.6,
+      "cost": 10.47,
+      "net_pnl": -77.07,
+      "return_pct": -0.01215,
+      "bars_held": 3,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.6635,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 60 sh (risk \u20b967) | qty:60",
+      "cost_parts": {
+        "brokerage": 3.79,
+        "stt": 1.57,
+        "exchange": 0.37,
+        "sebi": 0.01,
+        "stamp": 0.19,
+        "gst": 0.75,
+        "slippage": 3.79,
+        "total": 10.47
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.5409,
+        "rsi_momentum": 0.8575,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 1.0,
+      "margin_required": 6342.0
+    },
+    {
+      "symbol": "COFORGE",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 18,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:55:00+05:30",
+      "entry_price": 1488.0,
+      "exit_price": 1506.27,
+      "notional": 26784.0,
+      "leverage": 0.268,
+      "gross_pnl": 328.86,
+      "cost": 44.78,
+      "net_pnl": 284.08,
+      "return_pct": 0.01061,
+      "bars_held": 4,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.7774,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 18 sh (risk \u20b9200) | qty:18",
+      "cost_parts": {
+        "brokerage": 16.17,
+        "stt": 6.78,
+        "exchange": 1.6,
+        "sebi": 0.05,
+        "stamp": 0.8,
+        "gst": 3.21,
+        "slippage": 16.17,
+        "total": 44.78
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.7647,
+        "rsi_momentum": 0.8626,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 1.0,
+      "margin_required": 26784.0
+    },
+    {
+      "symbol": "NSLNISP",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 212,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T09:55:00+05:30",
+      "entry_price": 52.4,
+      "exit_price": 52.81,
+      "notional": 11108.8,
+      "leverage": 0.111,
+      "gross_pnl": 86.47,
+      "cost": 18.53,
+      "net_pnl": 67.94,
+      "return_pct": 0.00612,
+      "bars_held": 4,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7658,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:3LOT(>=0.75) | 212 sh (risk \u20b9200) | qty:212",
+      "cost_parts": {
+        "brokerage": 6.69,
+        "stt": 2.8,
+        "exchange": 0.66,
+        "sebi": 0.02,
+        "stamp": 0.33,
+        "gst": 1.33,
+        "slippage": 6.69,
+        "total": 18.53
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6689,
+        "rsi_momentum": 0.9535,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 1.0,
+      "margin_required": 11108.8
+    },
+    {
+      "symbol": "TECHM",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 12,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T10:00:00+05:30",
+      "entry_price": 1572.8,
+      "exit_price": 1562.28,
+      "notional": 18873.6,
+      "leverage": 0.189,
+      "gross_pnl": -126.24,
+      "cost": 31.22,
+      "net_pnl": -157.46,
+      "return_pct": -0.00834,
+      "bars_held": 5,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7483,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 12 sh (risk \u20b9133) | qty:12",
+      "cost_parts": {
+        "brokerage": 11.29,
+        "stt": 4.69,
+        "exchange": 1.12,
+        "sebi": 0.04,
+        "stamp": 0.57,
+        "gst": 2.24,
+        "slippage": 11.29,
+        "total": 31.22
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6418,
+        "rsi_momentum": 0.9434,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 1.0,
+      "margin_required": 18873.6
+    },
+    {
+      "symbol": "PERSISTENT",
+      "side": "BUY",
+      "direction": "LONG",
+      "qty": 3,
+      "entry_time": "2026-06-02T09:35:00+05:30",
+      "exit_time": "2026-06-02T10:40:00+05:30",
+      "entry_price": 5497.5,
+      "exit_price": 5570.84,
+      "notional": 16492.5,
+      "leverage": 0.165,
+      "gross_pnl": 220.02,
+      "cost": 27.59,
+      "net_pnl": 192.43,
+      "return_pct": 0.01167,
+      "bars_held": 13,
+      "exit_reason": "TARGET_HIT",
+      "entry_score": 0.726,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 3 sh (risk \u20b9133) | qty:3",
+      "cost_parts": {
+        "brokerage": 9.96,
+        "stt": 4.18,
+        "exchange": 0.99,
+        "sebi": 0.03,
+        "stamp": 0.49,
+        "gst": 1.98,
+        "slippage": 9.96,
+        "total": 27.59
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6511,
+        "rsi_momentum": 0.8763,
+        "mean_reversion": -0.0
+      },
+      "margin_multiplier": 1.0,
+      "margin_required": 16492.5
+    }
+  ],
+  "events": [
+    {
+      "t": "2026-06-02T09:00:00",
+      "type": "UNIVERSE_SET",
+      "symbol": "",
+      "detail": {
+        "detail_strategies": {
+          "momentum_vwap": [
+            "INFY",
+            "WIPRO",
+            "ADANIENT",
+            "TCS",
+            "HCLTECH",
+            "TECHM",
+            "HINDALCO",
+            "ASIANPAINT",
+            "GRASIM",
+            "ADANIPORTS"
+          ],
+          "rsi_momentum": [
+            "PTCIL",
+            "NMDC",
+            "DATAMATICS",
+            "ACMESOLAR",
+            "IFCI",
+            "NSLNISP",
+            "TATAELXSI",
+            "SKIPPER",
+            "SKYGOLD",
+            "NBCC"
+          ],
+          "mean_reversion": [
+            "NMDC",
+            "TATAELXSI",
+            "NBCC",
+            "INFY",
+            "SAMMAANCAP",
+            "ADANIENT",
+            "COFORGE",
+            "EXIDEIND",
+            "WIPRO",
+            "PERSISTENT"
+          ],
+          "ml_macro": [
+            "PTCIL",
+            "NMDC",
+            "DATAMATICS",
+            "ACMESOLAR",
+            "IFCI",
+            "NSLNISP",
+            "TATAELXSI",
+            "SKIPPER",
+            "SKYGOLD",
+            "NBCC"
+          ]
+        },
+        "n": 24
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "SESSION_OPEN",
+      "symbol": "",
+      "detail": {
+        "symbols_with_data": [
+          "ACMESOLAR",
+          "ADANIENT",
+          "ADANIPORTS",
+          "ASIANPAINT",
+          "COFORGE",
+          "DATAMATICS",
+          "EXIDEIND",
+          "GRASIM",
+          "HCLTECH",
+          "HINDALCO",
+          "IFCI",
+          "INFY",
+          "NBCC",
+          "NMDC",
+          "NSLNISP",
+          "PERSISTENT",
+          "PTCIL",
+          "SAMMAANCAP",
+          "SKIPPER",
+          "SKYGOLD",
+          "TATAELXSI",
+          "TCS",
+          "TECHM",
+          "WIPRO"
+        ],
+        "bars": 76
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (15min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COFORGE",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (10min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (10min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (10min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (10min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "COFORGE",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NBCC",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "ADANIENT",
+      "detail": {
+        "side": "SELL",
+        "score": -0.9049,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "COFORGE",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7774,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "NBCC",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6635,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7658,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "score": 0.726,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7208,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7483,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "ADANIENT",
+      "detail": {
+        "side": "SELL",
+        "direction": "SHORT",
+        "qty": 11,
+        "price": 2878.2,
+        "notional": 31660.2,
+        "leverage": 0.32,
+        "sl": 2894.03,
+        "tgt": 2851.81,
+        "score": -0.9049,
+        "regime": "TRENDING_DOWN",
+        "sizing_note": "Tier:3LOT(>=0.75) | 11 sh (risk \u20b9200) | qty:11",
+        "reason_chain": [
+          "composite -0.905 @ TRENDING_DOWN",
+          "top signals: vwap_breakout (-0.50), rsi_momentum (-0.37)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": -1.0,
+          "rsi_momentum": -0.9373,
+          "mean_reversion": 0.0
+        },
+        "margin_multiplier": 1.0,
+        "margin_required": 31660.2,
+        "margin_pct": 100.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "COFORGE",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 18,
+        "price": 1488.0,
+        "notional": 26784.0,
+        "leverage": 0.27,
+        "sl": 1477.04,
+        "tgt": 1506.27,
+        "score": 0.7774,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 18 sh (risk \u20b9200) | qty:18",
+        "reason_chain": [
+          "composite +0.777 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.38), rsi_momentum (+0.35)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.7647,
+          "rsi_momentum": 0.8626,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 1.0,
+        "margin_required": 26784.0,
+        "margin_pct": 100.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "NBCC",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 60,
+        "price": 105.7,
+        "notional": 6342.0,
+        "leverage": 0.06,
+        "sl": 104.59,
+        "tgt": 107.55,
+        "score": 0.6635,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 60 sh (risk \u20b967) | qty:60",
+        "reason_chain": [
+          "composite +0.663 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.34), vwap_breakout (+0.27)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.5409,
+          "rsi_momentum": 0.8575,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 1.0,
+        "margin_required": 6342.0,
+        "margin_pct": 100.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 212,
+        "price": 52.4,
+        "notional": 11108.8,
+        "leverage": 0.11,
+        "sl": 51.46,
+        "tgt": 53.97,
+        "score": 0.7658,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:3LOT(>=0.75) | 212 sh (risk \u20b9200) | qty:212",
+        "reason_chain": [
+          "composite +0.766 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.38), vwap_breakout (+0.33)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6689,
+          "rsi_momentum": 0.9535,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 1.0,
+        "margin_required": 11108.8,
+        "margin_pct": 100.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 3,
+        "price": 5497.5,
+        "notional": 16492.5,
+        "leverage": 0.16,
+        "sl": 5453.5,
+        "tgt": 5570.84,
+        "score": 0.726,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 3 sh (risk \u20b9133) | qty:3",
+        "reason_chain": [
+          "composite +0.726 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.35), vwap_breakout (+0.33)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6511,
+          "rsi_momentum": 0.8763,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 1.0,
+        "margin_required": 16492.5,
+        "margin_pct": 100.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 5,
+        "price": 4382.1,
+        "notional": 21910.5,
+        "leverage": 0.22,
+        "sl": 4356.25,
+        "tgt": 4425.18,
+        "score": 0.7208,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 5 sh (risk \u20b9133) | qty:5",
+        "reason_chain": [
+          "composite +0.721 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.36), vwap_breakout (+0.31)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6282,
+          "rsi_momentum": 0.8916,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 1.0,
+        "margin_required": 21910.5,
+        "margin_pct": 100.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ENTRY",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "direction": "LONG",
+        "qty": 12,
+        "price": 1572.8,
+        "notional": 18873.6,
+        "leverage": 0.19,
+        "sl": 1562.28,
+        "tgt": 1590.33,
+        "score": 0.7483,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 12 sh (risk \u20b9133) | qty:12",
+        "reason_chain": [
+          "composite +0.748 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.38), vwap_breakout (+0.32)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6418,
+          "rsi_momentum": 0.9434,
+          "mean_reversion": -0.0
+        },
+        "margin_multiplier": 1.0,
+        "margin_required": 18873.6,
+        "margin_pct": 100.0
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "sl": 4403.91,
+        "ltp": 4417.7
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "EXIT",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "side": "BUY",
+        "qty": 5,
+        "entry_price": 4382.1,
+        "exit_price": 4403.91,
+        "reason": "SL_HIT",
+        "gross": 109.07,
+        "cost": 36.48,
+        "net": 72.59,
+        "session_pnl": 72.59
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "EXIT",
+      "symbol": "ADANIENT",
+      "detail": {
+        "side": "SELL",
+        "qty": 11,
+        "entry_price": 2878.2,
+        "exit_price": 2894.03,
+        "reason": "SL_HIT",
+        "gross": -174.13,
+        "cost": 52.73,
+        "net": -226.86,
+        "session_pnl": -154.27
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "COFORGE",
+      "detail": {
+        "sl": 1494.25,
+        "ltp": 1500.1
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "EXIT",
+      "symbol": "NBCC",
+      "detail": {
+        "side": "BUY",
+        "qty": 60,
+        "entry_price": 105.7,
+        "exit_price": 104.59,
+        "reason": "SL_HIT",
+        "gross": -66.6,
+        "cost": 10.47,
+        "net": -77.07,
+        "session_pnl": -231.34
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "NSLNISP",
+      "detail": {
+        "sl": 52.81,
+        "ltp": 53.31
+      }
+    },
+    {
+      "t": "2026-06-02T09:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "EXIT",
+      "symbol": "COFORGE",
+      "detail": {
+        "side": "BUY",
+        "qty": 18,
+        "entry_price": 1488.0,
+        "exit_price": 1506.27,
+        "reason": "TARGET_HIT",
+        "gross": 328.86,
+        "cost": 44.78,
+        "net": 284.08,
+        "session_pnl": 52.74
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "EXIT",
+      "symbol": "NSLNISP",
+      "detail": {
+        "side": "BUY",
+        "qty": 212,
+        "entry_price": 52.4,
+        "exit_price": 52.81,
+        "reason": "SL_HIT",
+        "gross": 86.47,
+        "cost": 18.53,
+        "net": 67.94,
+        "session_pnl": 120.68
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "EXIT",
+      "symbol": "TECHM",
+      "detail": {
+        "side": "BUY",
+        "qty": 12,
+        "entry_price": 1572.8,
+        "exit_price": 1562.28,
+        "reason": "SL_HIT",
+        "gross": -126.24,
+        "cost": 31.22,
+        "net": -157.46,
+        "session_pnl": -36.78
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "sl": 5515.03,
+        "ltp": 5538.5
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "sl": 5524.53,
+        "ltp": 5548.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "sl": 5538.53,
+        "ltp": 5562.0
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NSLNISP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "EXIT",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "side": "BUY",
+        "qty": 3,
+        "entry_price": 5497.5,
+        "exit_price": 5570.84,
+        "reason": "TARGET_HIT",
+        "gross": 220.02,
+        "cost": 27.59,
+        "net": 192.43,
+        "session_pnl": 155.65
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "DATAMATICS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKYGOLD",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T10:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKYGOLD",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKYGOLD",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKYGOLD",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NMDC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HCLTECH",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T11:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NBCC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "NBCC",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SAMMAANCAP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SAMMAANCAP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T12:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PERSISTENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "EXIDEIND",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T13:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SAMMAANCAP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SAMMAANCAP",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:30:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:40:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "EXIDEIND",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:45:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:50:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T14:55:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "EXIDEIND",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:00:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ACMESOLAR",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ASIANPAINT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDALCO",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKYGOLD",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKYGOLD",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIENT",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "SKIPPER",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "ADANIPORTS",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "GRASIM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "IFCI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "PTCIL",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TATAELXSI",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "TECHM",
+      "detail": {
+        "reason": "MAX_TRADES_PER_DAY (7/5)"
+      }
+    },
+    {
+      "t": "2026-06-02T20:55:00+05:30",
+      "type": "SESSION_CLOSE",
+      "symbol": "",
+      "detail": {
+        "session_pnl": 155.65,
+        "trades": 7
+      }
+    }
+  ],
+  "gate_counts": {
+    "regime_choppy": 3,
+    "breaker:OPENING_BLACKOUT": 15,
+    "breaker:MAX_TRADES_PER_DAY": 230
+  },
+  "watchlist": {
+    "momentum_vwap": [
+      "INFY",
+      "WIPRO",
+      "ADANIENT",
+      "TCS",
+      "HCLTECH",
+      "TECHM",
+      "HINDALCO",
+      "ASIANPAINT",
+      "GRASIM",
+      "ADANIPORTS"
+    ],
+    "rsi_momentum": [
+      "PTCIL",
+      "NMDC",
+      "DATAMATICS",
+      "ACMESOLAR",
+      "IFCI",
+      "NSLNISP",
+      "TATAELXSI",
+      "SKIPPER",
+      "SKYGOLD",
+      "NBCC"
+    ],
+    "mean_reversion": [
+      "NMDC",
+      "TATAELXSI",
+      "NBCC",
+      "INFY",
+      "SAMMAANCAP",
+      "ADANIENT",
+      "COFORGE",
+      "EXIDEIND",
+      "WIPRO",
+      "PERSISTENT"
+    ],
+    "ml_macro": [
+      "PTCIL",
+      "NMDC",
+      "DATAMATICS",
+      "ACMESOLAR",
+      "IFCI",
+      "NSLNISP",
+      "TATAELXSI",
+      "SKIPPER",
+      "SKYGOLD",
+      "NBCC"
+    ]
+  }
+}

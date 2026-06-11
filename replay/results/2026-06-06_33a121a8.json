@@ -1,0 +1,559 @@
+{
+  "run_id": "33a121a8",
+  "date": "2026-06-06",
+  "params": {
+    "capital": 100000.0,
+    "risk_profile": "LOW",
+    "use_ml_gates": true,
+    "use_margin": true,
+    "timeframe": "5min"
+  },
+  "summary": {
+    "total_trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0,
+    "gross_pnl": 0.0,
+    "costs": 0.0,
+    "net_pnl": 0.0,
+    "max_drawdown": 0.0,
+    "return_pct": 0.0,
+    "profit_factor": null,
+    "expectancy": 0.0,
+    "cost_parts": {},
+    "by_exit_reason": {},
+    "longs": 0,
+    "shorts": 0,
+    "capital": 100000.0,
+    "peak_exposure": 0.0,
+    "peak_exposure_pct": 0.0,
+    "peak_leverage": 0.0,
+    "uses_margin": false
+  },
+  "universe": [
+    {
+      "symbol": "ACMESOLAR",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.73214,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.58138,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ADANIENT",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.63227,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.66825,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.49544,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "strategies": [
+        "momentum_vwap",
+        "mean_reversion"
+      ],
+      "screener_score": 0.60919,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.43554,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "AXISBANK",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.35088,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "CGPOWER",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.56405,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "CIPLA",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.40327,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "COALINDIA",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.54773,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "GAIL",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.53689,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "GRASIM",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.45293,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "GREAVESCOT",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.7277,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "GVT&D",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.55487,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "HSCL",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.7366,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ICICIBANK",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.42198,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "INFY",
+      "strategies": [
+        "momentum_vwap"
+      ],
+      "screener_score": 0.4299,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "KIMS",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.80821,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "LAURUSLABS",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.53762,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "MSTCLTD",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.67817,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "NBCC",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.63187,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "PARAS",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.73868,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "PREMIERENE",
+      "strategies": [
+        "mean_reversion"
+      ],
+      "screener_score": 0.55815,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "TATATECH",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.75182,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "TIPSMUSIC",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.68174,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "TVSSCS",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.6907,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    },
+    {
+      "symbol": "ZEEL",
+      "strategies": [
+        "rsi_momentum",
+        "ml_macro"
+      ],
+      "screener_score": 0.76907,
+      "reasons": [],
+      "last_score": null,
+      "direction": null,
+      "regime": null,
+      "status": "SCANNING",
+      "multiplier": null,
+      "margin_pct": null
+    }
+  ],
+  "trades": [],
+  "events": [
+    {
+      "t": "2026-06-06T09:00:00",
+      "type": "UNIVERSE_SET",
+      "symbol": "",
+      "detail": {
+        "detail_strategies": {
+          "momentum_vwap": [
+            "ADANIENT",
+            "APOLLOHOSP",
+            "COALINDIA",
+            "ADANIPORTS",
+            "GRASIM",
+            "ASIANPAINT",
+            "INFY",
+            "ICICIBANK",
+            "CIPLA",
+            "AXISBANK"
+          ],
+          "rsi_momentum": [
+            "KIMS",
+            "ZEEL",
+            "TATATECH",
+            "PARAS",
+            "HSCL",
+            "ACMESOLAR",
+            "GREAVESCOT",
+            "TVSSCS",
+            "TIPSMUSIC",
+            "MSTCLTD"
+          ],
+          "mean_reversion": [
+            "ADANIGREEN",
+            "ADANIENT",
+            "NBCC",
+            "APOLLOHOSP",
+            "ADANIENSOL",
+            "CGPOWER",
+            "PREMIERENE",
+            "GVT&D",
+            "LAURUSLABS",
+            "GAIL"
+          ],
+          "ml_macro": [
+            "KIMS",
+            "ZEEL",
+            "TATATECH",
+            "PARAS",
+            "HSCL",
+            "ACMESOLAR",
+            "GREAVESCOT",
+            "TVSSCS",
+            "TIPSMUSIC",
+            "MSTCLTD"
+          ]
+        },
+        "n": 28
+      }
+    },
+    {
+      "t": "2026-06-06T09:15:00",
+      "type": "NO_DATA",
+      "symbol": "",
+      "detail": {
+        "detail_note": "No 5-min candles found for any universe symbol on this date. It may be a market holiday/weekend, or outside Upstox's historical range."
+      }
+    }
+  ],
+  "gate_counts": {},
+  "watchlist": {
+    "momentum_vwap": [
+      "ADANIENT",
+      "APOLLOHOSP",
+      "COALINDIA",
+      "ADANIPORTS",
+      "GRASIM",
+      "ASIANPAINT",
+      "INFY",
+      "ICICIBANK",
+      "CIPLA",
+      "AXISBANK"
+    ],
+    "rsi_momentum": [
+      "KIMS",
+      "ZEEL",
+      "TATATECH",
+      "PARAS",
+      "HSCL",
+      "ACMESOLAR",
+      "GREAVESCOT",
+      "TVSSCS",
+      "TIPSMUSIC",
+      "MSTCLTD"
+    ],
+    "mean_reversion": [
+      "ADANIGREEN",
+      "ADANIENT",
+      "NBCC",
+      "APOLLOHOSP",
+      "ADANIENSOL",
+      "CGPOWER",
+      "PREMIERENE",
+      "GVT&D",
+      "LAURUSLABS",
+      "GAIL"
+    ],
+    "ml_macro": [
+      "KIMS",
+      "ZEEL",
+      "TATATECH",
+      "PARAS",
+      "HSCL",
+      "ACMESOLAR",
+      "GREAVESCOT",
+      "TVSSCS",
+      "TIPSMUSIC",
+      "MSTCLTD"
+    ]
+  }
+}

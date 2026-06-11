@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "asof": "2026-06-05",
+    "generated_at": "2026-06-05T23:16:05.146103",
+    "top_n": 10,
+    "counts": {
+      "momentum_vwap": 8,
+      "rsi_momentum": 8,
+      "mean_reversion": 8,
+      "ml_macro": 8
+    }
+  },
+  "momentum_vwap": [
+    "ICICIBANK",
+    "WIPRO",
+    "INFY",
+    "TCS",
+    "RELIANCE",
+    "AXISBANK",
+    "SBIN",
+    "HDFCBANK"
+  ],
+  "rsi_momentum": [
+    "ICICIBANK",
+    "WIPRO",
+    "INFY",
+    "TCS",
+    "RELIANCE",
+    "AXISBANK",
+    "SBIN",
+    "HDFCBANK"
+  ],
+  "mean_reversion": [
+    "ICICIBANK",
+    "WIPRO",
+    "INFY",
+    "TCS",
+    "RELIANCE",
+    "AXISBANK",
+    "SBIN",
+    "HDFCBANK"
+  ],
+  "ml_macro": [
+    "ICICIBANK",
+    "WIPRO",
+    "INFY",
+    "TCS",
+    "RELIANCE",
+    "AXISBANK",
+    "SBIN",
+    "HDFCBANK"
+  ]
+}

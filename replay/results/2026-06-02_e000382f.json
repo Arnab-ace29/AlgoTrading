@@ -1,0 +1,808 @@
+{
+  "run_id": "e000382f",
+  "date": "2026-06-02",
+  "params": {
+    "capital": 100000.0,
+    "risk_profile": "LOW",
+    "use_ml_gates": true,
+    "timeframe": "5min"
+  },
+  "summary": {
+    "total_trades": 2,
+    "wins": 0,
+    "losses": 2,
+    "win_rate": 0.0,
+    "gross_pnl": -7.54,
+    "costs": 98.07,
+    "net_pnl": -105.61,
+    "max_drawdown": 0.11,
+    "return_pct": -0.106,
+    "profit_factor": 0.0,
+    "expectancy": -52.8,
+    "cost_parts": {
+      "brokerage": 35.44,
+      "stt": 14.77,
+      "exchange": 3.51,
+      "sebi": 0.12,
+      "stamp": 1.77,
+      "gst": 7.03,
+      "slippage": 35.44,
+      "total": 98.07
+    },
+    "by_exit_reason": {
+      "SL_HIT": {
+        "trades": 2,
+        "net": -105.61
+      }
+    }
+  },
+  "universe": [
+    {
+      "symbol": "BAJFINANCE",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.17049,
+      "reasons": [],
+      "last_score": 0.4046,
+      "direction": "NEUTRAL",
+      "regime": "CHOPPY",
+      "status": "TRADED"
+    },
+    {
+      "symbol": "ICICIBANK",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.38921,
+      "reasons": [],
+      "last_score": 0.1513,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "ARMED"
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.04375,
+      "reasons": [],
+      "last_score": 0.7562,
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "status": "GATED"
+    },
+    {
+      "symbol": "TCS",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.48496,
+      "reasons": [],
+      "last_score": -0.2188,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "RELIANCE",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.19531,
+      "reasons": [],
+      "last_score": 0.1418,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.25253,
+      "reasons": [],
+      "last_score": 0.1111,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "SBIN",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.3075,
+      "reasons": [],
+      "last_score": 0.0849,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    },
+    {
+      "symbol": "INFY",
+      "strategies": [
+        "momentum_vwap",
+        "rsi_momentum",
+        "mean_reversion",
+        "ml_macro"
+      ],
+      "screener_score": 0.24838,
+      "reasons": [],
+      "last_score": -0.0258,
+      "direction": "NEUTRAL",
+      "regime": "MEAN_REVERTING",
+      "status": "SCANNING"
+    }
+  ],
+  "trades": [
+    {
+      "symbol": "HINDUNILVR",
+      "side": "BUY",
+      "qty": 19,
+      "entry_time": "2026-06-02T13:05:00+05:30",
+      "exit_time": "2026-06-02T13:35:00+05:30",
+      "entry_price": 2089.5,
+      "exit_price": 2092.47,
+      "gross_pnl": 56.48,
+      "cost": 65.97,
+      "net_pnl": -9.49,
+      "return_pct": -0.00024,
+      "bars_held": 6,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.7247,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:2LOT(0.70-0.75) | 19 sh (risk \u20b9133) | qty:19",
+      "cost_parts": {
+        "brokerage": 23.84,
+        "stt": 9.94,
+        "exchange": 2.36,
+        "sebi": 0.08,
+        "stamp": 1.19,
+        "gst": 4.73,
+        "slippage": 23.84,
+        "total": 65.97
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6229,
+        "rsi_momentum": 0.908,
+        "mean_reversion": -0.0
+      }
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "side": "BUY",
+      "qty": 22,
+      "entry_time": "2026-06-02T13:50:00+05:30",
+      "exit_time": "2026-06-02T14:00:00+05:30",
+      "entry_price": 880.25,
+      "exit_price": 877.34,
+      "gross_pnl": -64.02,
+      "cost": 32.1,
+      "net_pnl": -96.12,
+      "return_pct": -0.00496,
+      "bars_held": 2,
+      "exit_reason": "SL_HIT",
+      "entry_score": 0.6548,
+      "regime": "TRENDING_UP",
+      "sizing_note": "Tier:1LOT(0.65-0.70) | 22 sh (risk \u20b967) | qty:22",
+      "cost_parts": {
+        "brokerage": 11.6,
+        "stt": 4.83,
+        "exchange": 1.15,
+        "sebi": 0.04,
+        "stamp": 0.58,
+        "gst": 2.3,
+        "slippage": 11.6,
+        "total": 32.1
+      },
+      "signal_scores": {
+        "vwap_breakout": 0.6414,
+        "rsi_momentum": 0.7103,
+        "mean_reversion": -0.0
+      }
+    }
+  ],
+  "events": [
+    {
+      "t": "2026-06-02T09:00:00",
+      "type": "UNIVERSE_SET",
+      "symbol": "",
+      "detail": {
+        "detail_strategies": {
+          "momentum_vwap": [
+            "WIPRO",
+            "TCS",
+            "ICICIBANK",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK",
+            "INFY",
+            "RELIANCE",
+            "BAJFINANCE",
+            "HINDUNILVR"
+          ],
+          "rsi_momentum": [
+            "WIPRO",
+            "TCS",
+            "ICICIBANK",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK",
+            "INFY",
+            "RELIANCE",
+            "BAJFINANCE",
+            "HINDUNILVR"
+          ],
+          "mean_reversion": [
+            "WIPRO",
+            "TCS",
+            "ICICIBANK",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK",
+            "INFY",
+            "RELIANCE",
+            "BAJFINANCE",
+            "HINDUNILVR"
+          ],
+          "ml_macro": [
+            "WIPRO",
+            "TCS",
+            "ICICIBANK",
+            "AXISBANK",
+            "SBIN",
+            "HDFCBANK",
+            "INFY",
+            "RELIANCE",
+            "BAJFINANCE",
+            "HINDUNILVR"
+          ]
+        },
+        "n": 10
+      }
+    },
+    {
+      "t": "2026-06-02T09:15:00+05:30",
+      "type": "SESSION_OPEN",
+      "symbol": "",
+      "detail": {
+        "symbols_with_data": [
+          "BAJFINANCE",
+          "HDFCBANK",
+          "HINDUNILVR",
+          "ICICIBANK",
+          "INFY",
+          "RELIANCE",
+          "SBIN",
+          "TCS"
+        ],
+        "bars": 76
+      }
+    },
+    {
+      "t": "2026-06-02T09:25:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "OPENING_BLACKOUT (5min remaining)"
+      }
+    },
+    {
+      "t": "2026-06-02T09:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "SELL",
+        "score": -0.6129,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T09:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "SELL",
+        "score": -0.6039,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T09:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T10:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "SELL",
+        "score": -0.5697,
+        "regime": "TRENDING_DOWN"
+      }
+    },
+    {
+      "t": "2026-06-02T10:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.7247,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:05:00+05:30",
+      "type": "ENTRY",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "qty": 19,
+        "price": 2089.5,
+        "sl": 2082.7,
+        "tgt": 2100.84,
+        "score": 0.7247,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:2LOT(0.70-0.75) | 19 sh (risk \u20b9133) | qty:19",
+        "reason_chain": [
+          "composite +0.725 @ TRENDING_UP",
+          "top signals: rsi_momentum (+0.36), vwap_breakout (+0.31)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6229,
+          "rsi_momentum": 0.908,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-02T13:25:00+05:30",
+      "type": "ARMED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6222,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:30:00+05:30",
+      "type": "TRAIL_SL",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "sl": 2092.47,
+        "ltp": 2096.1
+      }
+    },
+    {
+      "t": "2026-06-02T13:30:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6086,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:30:00+05:30",
+      "type": "ARMED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5754,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "EXIT",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "qty": 19,
+        "entry_price": 2089.5,
+        "exit_price": 2092.47,
+        "reason": "SL_HIT",
+        "gross": 56.48,
+        "cost": 65.97,
+        "net": -9.49,
+        "session_pnl": -9.49
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "ICICIBANK",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5913,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:35:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6317,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:40:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6166,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:40:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5617,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:45:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6548,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:45:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6018,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:50:00+05:30",
+      "type": "ENTRY",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "side": "BUY",
+        "qty": 22,
+        "price": 880.25,
+        "sl": 877.34,
+        "tgt": 885.11,
+        "score": 0.6548,
+        "regime": "TRENDING_UP",
+        "sizing_note": "Tier:1LOT(0.65-0.70) | 22 sh (risk \u20b967) | qty:22",
+        "reason_chain": [
+          "composite +0.655 @ TRENDING_UP",
+          "top signals: vwap_breakout (+0.32), rsi_momentum (+0.28)"
+        ],
+        "signal_scores": {
+          "vwap_breakout": 0.6414,
+          "rsi_momentum": 0.7103,
+          "mean_reversion": -0.0
+        }
+      }
+    },
+    {
+      "t": "2026-06-02T13:50:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:50:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6458,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T13:55:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T13:55:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.5877,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "EXIT",
+      "symbol": "BAJFINANCE",
+      "detail": {
+        "side": "BUY",
+        "qty": 22,
+        "entry_price": 880.25,
+        "exit_price": 877.34,
+        "reason": "SL_HIT",
+        "gross": -64.02,
+        "cost": 32.1,
+        "net": -96.12,
+        "session_pnl": -105.61
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T14:00:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.599,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T14:05:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T14:05:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6219,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T14:10:00+05:30",
+      "type": "ARMED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "side": "BUY",
+        "score": 0.6367,
+        "regime": "TRENDING_UP"
+      }
+    },
+    {
+      "t": "2026-06-02T14:15:00+05:30",
+      "type": "ENTRY_SKIPPED",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "sizing/heat -> qty 0"
+      }
+    },
+    {
+      "t": "2026-06-02T15:05:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "CLOSING_BLACKOUT (force-exit zone)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:10:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "CLOSING_BLACKOUT (force-exit zone)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:15:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "CLOSING_BLACKOUT (force-exit zone)"
+      }
+    },
+    {
+      "t": "2026-06-02T15:20:00+05:30",
+      "type": "GATE_BLOCK",
+      "symbol": "HINDUNILVR",
+      "detail": {
+        "reason": "CLOSING_BLACKOUT (force-exit zone)"
+      }
+    },
+    {
+      "t": "2026-06-02T20:55:00+05:30",
+      "type": "SESSION_CLOSE",
+      "symbol": "",
+      "detail": {
+        "session_pnl": -105.61,
+        "trades": 2
+      }
+    }
+  ],
+  "gate_counts": {
+    "breaker:OPENING_BLACKOUT": 1,
+    "sizing/heat": 16,
+    "breaker:CLOSING_BLACKOUT": 4
+  },
+  "watchlist": {
+    "momentum_vwap": [
+      "WIPRO",
+      "TCS",
+      "ICICIBANK",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK",
+      "INFY",
+      "RELIANCE",
+      "BAJFINANCE",
+      "HINDUNILVR"
+    ],
+    "rsi_momentum": [
+      "WIPRO",
+      "TCS",
+      "ICICIBANK",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK",
+      "INFY",
+      "RELIANCE",
+      "BAJFINANCE",
+      "HINDUNILVR"
+    ],
+    "mean_reversion": [
+      "WIPRO",
+      "TCS",
+      "ICICIBANK",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK",
+      "INFY",
+      "RELIANCE",
+      "BAJFINANCE",
+      "HINDUNILVR"
+    ],
+    "ml_macro": [
+      "WIPRO",
+      "TCS",
+      "ICICIBANK",
+      "AXISBANK",
+      "SBIN",
+      "HDFCBANK",
+      "INFY",
+      "RELIANCE",
+      "BAJFINANCE",
+      "HINDUNILVR"
+    ]
+  }
+}
