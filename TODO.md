@@ -40,8 +40,8 @@
 | 18 | Download 1-day OHLCV for all ~750 symbols | A | ✅ | 752 symbols, 332,815 rows; ~495 daily candles each (2 years) |
 | 19 | Download India VIX daily (2 years) and store in DB | A | ✅ | INDIAVIX: 722 rows, 2023-06-30 → 2026-06-12 |
 | 20 | Download sector indices (Nifty Bank, IT, FMCG, Pharma, Auto, Metal) | A | ✅ | Done via `download_data.py` Step 4 (NIFTYINFRA key invalid — all others OK) |
-| 21 | Download 5-min data for 8 missing BE-type symbols | A | 🔄 | Running: ATLANTAELE, DBREALTY, JAIBALAJI, KRN, PFOCUS, QPOWER, STLTECH, UTLSOLAR |
-| 22 | Build master stock data inventory Excel | U | 🔄 | Fast version done. Re-run with yfinance after download completes |
+| 21 | Download 5-min + 1-day data for 8 missing BE-type symbols | A | ✅ | ATLANTAELE (11k bars), DBREALTY, JAIBALAJI, KRN, PFOCUS, QPOWER, STLTECH (~34k bars each), UTLSOLAR (137 days). All 747 symbols now have 5min data |
+| 22 | Build master stock data inventory Excel | U | ✅ | `data/stock_master.xlsx` — 747 symbols, real market caps via yfinance, 413 strategy filter candidates |
 
 ### Backtest & Validation (Upcoming)
 
