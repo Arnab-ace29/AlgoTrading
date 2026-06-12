@@ -1,50 +1,74 @@
-import sqlite3, os, sys, json
+"""
+Quick DB diagnostic — shows coverage for all universe symbols.
+"""
+import sqlite3, sys, json
+from pathlib import Path
 
-sys.stdout.reconfigure(encoding='utf-8')
-db = r'd:\Python_Codes\AlgoTrading\data\algo_trading.sqlite'
-conn = sqlite3.connect(db, timeout=10)
+ROOT = Path(__file__).parent.parent
+sys.stdout.reconfigure(encoding="utf-8")
 
-# Load target universe
-with open(r'd:\Python_Codes\AlgoTrading\archive\config\universes.json') as f:
+db = ROOT / "data" / "algo_trading.sqlite"
+conn = sqlite3.connect(str(db), timeout=30)
+
+with open(ROOT / "config" / "universes.json") as f:
     universes = json.load(f)
 
-nifty100 = set(universes['nifty100'])
-print(f"Nifty 100 symbols: {len(nifty100)}")
+all_syms: set[str] = set()
+for v in universes.values():
+    all_syms.update(v)
 
-# Get all symbols with 5min data
-all_syms = set(r[0] for r in conn.execute("SELECT DISTINCT symbol FROM minute_candles WHERE timeframe='5min'").fetchall())
-print(f"Symbols with 5min data: {len(all_syms)}")
+n50  = set(universes.get("nifty50", []))
+n100 = set(universes.get("nifty100", []))
 
-# Coverage check for Nifty 100
-missing = nifty100 - all_syms
-covered = nifty100 & all_syms
-print(f"\nNifty 100 coverage: {len(covered)}/{len(nifty100)} symbols have 5min data")
-if missing:
-    print(f"Missing from DB: {sorted(missing)}")
+# Row counts per timeframe
+print("=== DB Summary ===")
+for tf, label in [("5min", "5-min"), ("1day", "1-day")]:
+    r = conn.execute(
+        "SELECT COUNT(DISTINCT symbol), COUNT(*), MIN(timestamp), MAX(timestamp) "
+        "FROM minute_candles WHERE timeframe=?", (tf,)
+    ).fetchone()
+    print(f"  {label}: {r[0]} symbols, {r[1]:,} rows  [{str(r[2])[:10]} → {str(r[3])[:10]}]")
 
-# Daily candle coverage for Nifty 100
-daily_syms = set(r[0] for r in conn.execute("SELECT DISTINCT symbol FROM minute_candles WHERE timeframe='1day'").fetchall())
-daily_covered = nifty100 & daily_syms
-print(f"\nNifty 100 daily candle coverage: {len(daily_covered)}/{len(nifty100)}")
-daily_missing = nifty100 - daily_syms
-if daily_missing:
-    print(f"Missing daily candles: {sorted(daily_missing)}")
+# Coverage against universe
+print(f"\n=== Universe Coverage ({len(all_syms)} symbols) ===")
+for tf, label in [("5min", "5-min"), ("1day", "1-day")]:
+    have = set(r[0] for r in conn.execute(
+        "SELECT DISTINCT symbol FROM minute_candles WHERE timeframe=?", (tf,)).fetchall())
+    missing = sorted(all_syms - have)
+    print(f"  {label}: {len(have & all_syms)}/{len(all_syms)} covered, {len(missing)} missing")
+    for s in missing:
+        print(f"    MISSING {tf}: {s}")
 
-# Bar count distribution for Nifty 100 symbols (5min)
-print("\n=== Bar count distribution (5min, Nifty 100) ===")
-counts = []
-for sym in sorted(covered):
-    c = conn.execute("SELECT COUNT(*) FROM minute_candles WHERE symbol=? AND timeframe='5min'", (sym,)).fetchone()[0]
-    counts.append((sym, c))
-counts.sort(key=lambda x: x[1])
-min_c, max_c = counts[0], counts[-1]
-avg_c = sum(c for _, c in counts) // len(counts)
-print(f"  Min: {min_c[0]} = {min_c[1]:,} bars")
-print(f"  Max: {max_c[0]} = {max_c[1]:,} bars")
-print(f"  Avg: {avg_c:,} bars  (~{avg_c//75} trading days)")
-symbols_lt_200 = [(s, c) for s, c in counts if c < 15000]  # < ~200 days
-print(f"  Symbols with < 200 trading days of data: {len(symbols_lt_200)}")
-for s, c in symbols_lt_200:
-    print(f"    {s}: {c:,} ({c//75} days)")
+# Nifty 100 bar count distribution (5min)
+print("\n=== Nifty 100 — 5-min bar distribution ===")
+have_5m = set(r[0] for r in conn.execute(
+    "SELECT DISTINCT symbol FROM minute_candles WHERE timeframe='5min'").fetchall())
+covered = sorted(n100 & have_5m)
+if covered:
+    rows = conn.execute(
+        f"SELECT symbol, COUNT(*) as bars FROM minute_candles "
+        f"WHERE timeframe='5min' AND symbol IN ({','.join('?'*len(covered))}) "
+        f"GROUP BY symbol ORDER BY bars", covered
+    ).fetchall()
+    bars_list = [r[1] for r in rows]
+    avg = sum(bars_list) // len(bars_list)
+    print(f"  Min: {rows[0][0]} = {rows[0][1]:,} bars ({rows[0][1]//75} days)")
+    print(f"  Max: {rows[-1][0]} = {rows[-1][1]:,} bars ({rows[-1][1]//75} days)")
+    print(f"  Avg: {avg:,} bars (~{avg//75} trading days)")
+    thin = [(s, b) for s, b in rows if b < 15000]
+    print(f"  Symbols < 200 trading days: {len(thin)}")
+    for s, b in thin:
+        print(f"    {s}: {b:,} ({b//75} days)")
+
+# VIX / global indices
+print("\n=== Index / Macro data ===")
+for sym in ("INDIAVIX", "NIFTY50_YF", "SP500", "NASDAQ", "NIFTYBANK", "NIFTYIT", "NIFTYFMCG"):
+    r = conn.execute(
+        "SELECT COUNT(*), MIN(timestamp), MAX(timestamp) FROM minute_candles WHERE symbol=?", (sym,)
+    ).fetchone()
+    if r[0]:
+        print(f"  {sym}: {r[0]} rows  [{str(r[1])[:10]} → {str(r[2])[:10]}]")
+    else:
+        print(f"  {sym}: NO DATA")
 
 conn.close()

@@ -67,7 +67,7 @@ def _download() -> dict[str, str]:
         seg  = it.get("segment", "")
         itype = it.get("instrument_type", "")
 
-        if seg == "NSE_EQ" and itype == "EQ":
+        if seg == "NSE_EQ" and itype in ("EQ", "BE"):  # BE = trade-for-trade settlement
             ts, ik = it.get("trading_symbol"), it.get("instrument_key")
             if ts and ik:
                 eq_map[str(ts).upper()] = ik

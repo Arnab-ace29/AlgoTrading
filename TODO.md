@@ -33,25 +33,26 @@
 | 11 | Data audit — what exists, what's needed, how much to scrape | U | ✅ | 23.5M rows of real 5-min OHLCV for 740 symbols (2 years, source: Upstox). Missing: daily candles, VIX |
 | 12 | Restore data infrastructure from archive (`db.py`, `upstox_history.py`, `instruments.py`, `settings.py`) | A | ✅ | Restored to `data/` and `config/` |
 | 13 | Verify Upstox ANALYTICS_TOKEN validity | A | ✅ | Valid until ~June 2027. Used for all historical data downloads |
-| 14 | Verify India VIX from yfinance (`^INDIAVIX`) | A | ✅ | Works. Returns daily data. Example: VIX = 14.7 on 2026-06-12 |
-| 15 | Download 5-min data for missing Nifty 100 symbols (LTIM, TATAMOTORS, ZOMATO) | U | 🔄 | Script ready: `scripts/download_data.py` |
-| 16 | Download 1-day OHLCV for all 750+ symbols (needed for EMA trend filter) | A | 🔄 | Script ready: `scripts/download_data.py --tf 1day` |
-| 17 | Download India VIX daily (2 years) and store in DB | A | 🔄 | Script ready: `scripts/download_data.py --vix-only` |
-| 18 | Download sector indices (Nifty Bank, IT, FMCG, Pharma, Auto, Metal) | A | 🔄 | Included in `download_data.py` as Step 4 |
-| 19 | Expand universe: add any NSE 750 symbols missing from DB | U | 🔄 | `download_data.py` handles all symbols in `universes.json` |
-| 20 | Fix corrupted `data/algo_trading.db` (not a valid SQLite file) | A | ⏳ | Delete this file — nothing useful in it |
-| 21 | Build master stock data inventory Excel | U | 🔄 | Script ready: `scripts/build_data_excel.py` |
+| 14 | Verify India VIX from yfinance (`^INDIAVIX`) | A | ✅ | Works. Returns daily data. 722 rows (2 years) in DB |
+| 15 | Fix universe symbols: LTIM→LTM, ZOMATO→ETERNAL, TATAMOTORS→TMCV/TMPV | A | ✅ | `fix_universe_symbols.py`; `config/universes.json` patched; all new symbols already have full 2yr data |
+| 16 | Fix `instruments.py` to resolve BE-type (trade-for-trade) stocks | A | ✅ | Line 70: added `BE` to type filter; cache regenerated with 2,667 symbols |
+| 17 | Remove DUMMYALCAR placeholder from universe | A | ✅ | Removed from `config/universes.json`; universe now 747 symbols |
+| 18 | Download 1-day OHLCV for all ~750 symbols | A | ✅ | 752 symbols, 332,815 rows; ~495 daily candles each (2 years) |
+| 19 | Download India VIX daily (2 years) and store in DB | A | ✅ | INDIAVIX: 722 rows, 2023-06-30 → 2026-06-12 |
+| 20 | Download sector indices (Nifty Bank, IT, FMCG, Pharma, Auto, Metal) | A | ✅ | Done via `download_data.py` Step 4 (NIFTYINFRA key invalid — all others OK) |
+| 21 | Download 5-min data for 8 missing BE-type symbols | A | 🔄 | Running: ATLANTAELE, DBREALTY, JAIBALAJI, KRN, PFOCUS, QPOWER, STLTECH, UTLSOLAR |
+| 22 | Build master stock data inventory Excel | U | 🔄 | Fast version done. Re-run with yfinance after download completes |
 
 ### Backtest & Validation (Upcoming)
 
 | # | Task | Who | Status | Notes |
 |---|---|---|---|---|
-| 22 | Backtest the 5-dimension momentum breakout strategy on 2 years of real data | U | ⏳ | Needs data download (15-19 above) to complete first |
-| 23 | Validate: optimal ORB window (9:15-9:30 vs 9:15-9:45) | A | ⏳ | Listed in STRATEGY_RESEARCH.md open questions |
-| 24 | Validate: best RVOL threshold (2× vs 2.5× vs 3× avg) | A | ⏳ | |
-| 25 | Validate: VIX hard-pass filter net effect on win rate | A | ⏳ | |
-| 26 | Paper trade for 60+ days once backtest shows Sharpe > 1.0 | U | ⏳ | |
-| 27 | Go live at ₹20k after paper trading validates strategy | U | ⏳ | |
+| 23 | Backtest the 5-dimension momentum breakout strategy on 2 years of real data | U | ⏳ | Needs data download to complete first |
+| 24 | Validate: optimal ORB window (9:15-9:30 vs 9:15-9:45) | A | ⏳ | Listed in STRATEGY_RESEARCH.md open questions |
+| 25 | Validate: best RVOL threshold (2× vs 2.5× vs 3× avg) | A | ⏳ | |
+| 26 | Validate: VIX hard-pass filter net effect on win rate | A | ⏳ | |
+| 27 | Paper trade for 60+ days once backtest shows Sharpe > 1.0 | U | ⏳ | |
+| 28 | Go live at ₹20k after paper trading validates strategy | U | ⏳ | |
 
 ---
 
@@ -65,6 +66,7 @@
 | June 2026 | ANALYTICS_TOKEN for all data backfill jobs | 1-year lifetime, no daily re-auth needed; LIVE_ACCESS_TOKEN expires each midnight IST |
 | June 2026 | India VIX via yfinance (`^INDIAVIX`) not Upstox | Simpler, no instrument key needed, works for daily data |
 | June 2026 | SQLite WAL mode as primary data store | Supports concurrent readers + writer without locking (live runner + dashboard) |
+| June 2026 | Include BE (trade-for-trade) stocks in universe | They have valid OHLCV from Upstox; strategy filter (≥₹50cr turnover) will exclude illiquid ones |
 
 ---
 
