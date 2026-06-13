@@ -260,6 +260,8 @@ def main():
             "1day: End Date":       c1d["last"]  or "",
             "1day: Bar Count":      c1d["bars"],
             "1day: Trading Days":   c1d["bars"],
+            "OHLCV Source":         "Upstox",
+            "Fundamentals Source":  "yfinance" if (yf.get("market_cap_cr") or 0) > 0 else "—",
             "Last Updated":         datetime.now().strftime("%Y-%m-%d %H:%M"),
         })
 
@@ -289,7 +291,8 @@ def main():
             "N": 22,                                         # Filter
             "O": 16, "P": 14, "Q": 14, "R": 14, "S": 16, "T": 18,  # 5min cols
             "U": 16, "V": 14, "W": 14, "X": 14, "Y": 16,  # 1day cols
-            "Z": 18,                                         # Last Updated
+            "Z": 14, "AA": 20,                               # Source columns
+            "AB": 18,                                        # Last Updated
         }
         from openpyxl.styles import PatternFill, Font, Alignment
         from openpyxl.utils import get_column_letter
