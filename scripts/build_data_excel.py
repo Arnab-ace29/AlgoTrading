@@ -351,6 +351,70 @@ def main():
         ws_sum.column_dimensions["A"].width = 52
         ws_sum.column_dimensions["B"].width = 16
 
+        # ── Indices & Macro sheet ─────────────────────────────────────────────
+        INDEX_META = {
+            # symbol: (description, type, source)
+            "INDIAVIX":    ("India VIX (Volatility Index)",          "India VIX",      "yfinance"),
+            "NIFTY50_YF":  ("Nifty 50 — yfinance feed",              "India Index",    "yfinance"),
+            "SP500":       ("S&P 500 (US large-cap index)",           "Global Index",   "yfinance"),
+            "NASDAQ":      ("NASDAQ Composite",                       "Global Index",   "yfinance"),
+            "NIFTY50":     ("Nifty 50",                               "India Index",    "Upstox"),
+            "NIFTYNEXT50": ("Nifty Next 50",                          "India Index",    "Upstox"),
+            "NIFTYBANK":   ("Nifty Bank",                             "Sector Index",   "Upstox"),
+            "NIFTYIT":     ("Nifty IT",                               "Sector Index",   "Upstox"),
+            "NIFTYFMCG":   ("Nifty FMCG",                            "Sector Index",   "Upstox"),
+            "NIFTYPHARMA": ("Nifty Pharma",                           "Sector Index",   "Upstox"),
+            "NIFTYAUTO":   ("Nifty Auto",                             "Sector Index",   "Upstox"),
+            "NIFTYMETAL":  ("Nifty Metal",                            "Sector Index",   "Upstox"),
+            "NIFTYREALTY": ("Nifty Realty",                           "Sector Index",   "Upstox"),
+            "NIFTYINFRA":  ("Nifty Infrastructure (key invalid)",     "Sector Index",   "Upstox"),
+        }
+
+        conn2 = sqlite3.connect(str(DB_PATH), timeout=30)
+        idx_rows = []
+        for sym, (desc, itype, src) in INDEX_META.items():
+            r = conn2.execute(
+                "SELECT COUNT(*), MIN(timestamp), MAX(timestamp) FROM minute_candles WHERE symbol=?",
+                (sym,)
+            ).fetchone()
+            bars, first_ts, last_ts = r
+            idx_rows.append({
+                "Symbol":      sym,
+                "Description": desc,
+                "Type":        itype,
+                "Source":      src,
+                "Timeframe":   "1day",
+                "Start Date":  str(first_ts)[:10] if first_ts else "—",
+                "End Date":    str(last_ts)[:10]  if last_ts  else "—",
+                "Bar Count":   bars or 0,
+                "Available":   "Y" if bars else "N",
+            })
+        conn2.close()
+
+        df_idx = pd.DataFrame(idx_rows)
+        df_idx.to_excel(writer, index=False, sheet_name="Indices & Macro")
+        ws_idx = writer.sheets["Indices & Macro"]
+
+        # Header formatting
+        for cell in ws_idx[1]:
+            cell.fill  = PatternFill("solid", fgColor="D9E1F2")
+            cell.font  = Font(bold=True)
+            cell.alignment = Alignment(horizontal="center")
+        ws_idx.freeze_panes = "A2"
+
+        col_w_idx = {"A": 16, "B": 42, "C": 16, "D": 12, "E": 12, "F": 14, "G": 14, "H": 12, "I": 12}
+        for col_letter, width in col_w_idx.items():
+            ws_idx.column_dimensions[col_letter].width = width
+
+        # Colour Available column
+        avail_idx_col = df_idx.columns.get_loc("Available") + 1
+        for row in ws_idx.iter_rows(min_row=2, max_row=ws_idx.max_row):
+            cell = row[avail_idx_col - 1]
+            if cell.value == "Y":
+                cell.fill = green_fill
+            elif cell.value == "N":
+                cell.fill = red_fill
+
     logger.success(f"Excel written: {output_path}  ({n_total} symbols, {n_5m} with 5min data)")
     logger.info(f"  Strategy filter candidates: {n_filter}")
 

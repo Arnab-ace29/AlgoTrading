@@ -1,10 +1,9 @@
 -- AlgoTrading SQLite Schema (WAL).
--- SQLite is the operational store: it supports concurrent multi-process readers +
--- a writer (WAL), so the runner and dashboard can share it (fixes LIVE-06). DuckDB
--- can later ATTACH this file for heavy analytics. Run via data/db.py:init_db().
--- Timestamps are stored as ISO-8601 TEXT ('YYYY-MM-DD HH:MM:SS[.ffffff]').
+-- Init via data/db.py:init_db().  Timestamps stored as ISO-8601 TEXT.
+-- WAL mode: concurrent multi-process readers + a writer (runner + dashboard).
 
--- ── Raw tick data (live feed) ─────────────────────────────────────────────────
+-- ── Live tick feed ─────────────────────────────────────────────────────────────
+-- Written by the live WebSocket feed; used for real-time candle aggregation.
 CREATE TABLE IF NOT EXISTS ticks (
     timestamp        TEXT    NOT NULL,
     symbol           TEXT    NOT NULL,
@@ -28,6 +27,8 @@ CREATE TABLE IF NOT EXISTS ticks (
 CREATE INDEX IF NOT EXISTS idx_ticks_symbol_time ON ticks(symbol, timestamp);
 
 -- ── OHLCV candles (all timeframes) ───────────────────────────────────────────
+-- Primary historical store.  timeframe IN ('5min', '1day').
+-- Also stores index/macro data (INDIAVIX, NIFTYBANK, SP500, etc.) as '1day'.
 CREATE TABLE IF NOT EXISTS minute_candles (
     timestamp   TEXT NOT NULL,
     symbol      TEXT NOT NULL,
@@ -45,34 +46,14 @@ CREATE TABLE IF NOT EXISTS minute_candles (
 CREATE INDEX IF NOT EXISTS idx_candles_symbol_tf_time
     ON minute_candles(symbol, timeframe, timestamp DESC);
 
--- ── Option chain snapshots ────────────────────────────────────────────────────
-CREATE TABLE IF NOT EXISTS option_chain (
-    timestamp        TEXT NOT NULL,
-    underlying       TEXT NOT NULL,
-    expiry           TEXT NOT NULL,
-    strike           REAL NOT NULL,
-    option_type      TEXT NOT NULL,
-    ltp              REAL,
-    bid              REAL,
-    ask              REAL,
-    oi               INTEGER,
-    oi_change        INTEGER,
-    volume           INTEGER,
-    iv               REAL,
-    delta            REAL,
-    gamma            REAL,
-    theta            REAL,
-    vega             REAL,
-    PRIMARY KEY (timestamp, underlying, expiry, strike, option_type)
-);
-
 -- ── Trade log ─────────────────────────────────────────────────────────────────
+-- One row per trade (open + close).  mode = 'PAPER' | 'LIVE'.
 CREATE TABLE IF NOT EXISTS trade_log (
     trade_id             TEXT PRIMARY KEY,
     symbol               TEXT NOT NULL,
     strategy             TEXT NOT NULL,
-    side                 TEXT NOT NULL,
-    product_type         TEXT NOT NULL,
+    side                 TEXT NOT NULL,       -- BUY | SELL
+    product_type         TEXT NOT NULL,       -- MIS (intraday)
     qty                  INTEGER NOT NULL,
     entry_time           TEXT NOT NULL,
     entry_price          REAL,
@@ -81,9 +62,9 @@ CREATE TABLE IF NOT EXISTS trade_log (
     sl_price             REAL,
     target_price         REAL,
     trailing_sl_price    REAL,
-    pnl                  REAL,           -- GROSS realised pnl (exit-entry)*qty*side
-    cost                 REAL,           -- round-trip transaction cost (analytics.costs)
-    net_pnl              REAL,           -- pnl - cost (what actually hits the account)
+    pnl                  REAL,               -- gross: (exit-entry)*qty*side
+    cost                 REAL,               -- round-trip transaction cost
+    net_pnl              REAL,               -- pnl - cost
     pnl_pct              REAL,
     exit_reason          TEXT,
     entry_score          REAL,
@@ -91,14 +72,14 @@ CREATE TABLE IF NOT EXISTS trade_log (
     openalgo_order_id    TEXT,
     exchange_order_id    TEXT,
     status               TEXT DEFAULT 'OPEN',
-    mode                 TEXT DEFAULT 'PAPER',   -- PAPER (virtual) | LIVE (real money)
-    notes                TEXT
+    mode                 TEXT DEFAULT 'PAPER'
 );
 CREATE INDEX IF NOT EXISTS idx_trade_symbol_time ON trade_log(symbol, entry_time DESC);
 CREATE INDEX IF NOT EXISTS idx_trade_strategy     ON trade_log(strategy);
 CREATE INDEX IF NOT EXISTS idx_trade_status        ON trade_log(status);
 
 -- ── Daily performance ─────────────────────────────────────────────────────────
+-- End-of-day summary aggregated from trade_log.  Equity curve is derived here.
 CREATE TABLE IF NOT EXISTS daily_performance (
     date             TEXT PRIMARY KEY,
     total_trades     INTEGER,
@@ -116,23 +97,8 @@ CREATE TABLE IF NOT EXISTS daily_performance (
     regime_of_day    TEXT
 );
 
--- ── Equity curve (for dashboard chart) ───────────────────────────────────────
-CREATE TABLE IF NOT EXISTS equity_curve (
-    timestamp    TEXT PRIMARY KEY,
-    capital      REAL NOT NULL,
-    daily_pnl    REAL,
-    drawdown_pct REAL
-);
-
--- ── Computed features snapshot (for ML training + audit) ─────────────────────
-CREATE TABLE IF NOT EXISTS features_snapshot (
-    timestamp     TEXT NOT NULL,
-    symbol        TEXT NOT NULL,
-    features_json TEXT,
-    PRIMARY KEY (timestamp, symbol)
-);
-
 -- ── Backtest run registry ─────────────────────────────────────────────────────
+-- One row per completed backtest run; used by the dashboard /history page.
 CREATE TABLE IF NOT EXISTS backtest_runs (
     run_id       TEXT PRIMARY KEY,
     run_time     TEXT NOT NULL,
@@ -147,30 +113,4 @@ CREATE TABLE IF NOT EXISTS backtest_runs (
     total_trades INTEGER,
     params_json  TEXT,
     result_path  TEXT
-);
-
--- ── Model training log ────────────────────────────────────────────────────────
-CREATE TABLE IF NOT EXISTS model_training_log (
-    run_id       TEXT PRIMARY KEY,
-    run_time     TEXT NOT NULL,
-    model_name   TEXT,
-    train_auc    REAL,
-    val_auc      REAL,
-    n_samples    INTEGER,
-    features_used INTEGER,
-    params_json  TEXT,
-    model_path   TEXT
-);
-
--- ── Sentiment cache (Phase 3) ─────────────────────────────────────────────────
-CREATE TABLE IF NOT EXISTS sentiment_cache (
-    symbol      TEXT NOT NULL,
-    source      TEXT NOT NULL,
-    fetch_time  TEXT NOT NULL,
-    headline    TEXT,
-    sentiment   REAL,
-    positive    REAL,
-    negative    REAL,
-    neutral     REAL,
-    PRIMARY KEY (symbol, source, fetch_time)
 );
