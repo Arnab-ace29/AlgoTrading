@@ -188,7 +188,7 @@ def main():
         logger.info("\n=== Step 3: 1-day OHLCV (all symbols) ===")
         coverage_1d = get_db_coverage(conn, symbols, "1day")
 
-        to_fetch_1d = [s for s in symbols if args.force or coverage_1d[s]["bars"] < 50]
+        to_fetch_1d = [s for s in symbols if args.force or coverage_1d[s]["bars"] < 450]
         logger.info(f"  Symbols to fetch/update (1day): {len(to_fetch_1d)}")
 
         for i, sym in enumerate(to_fetch_1d, 1):
@@ -197,8 +197,11 @@ def main():
                 logger.warning(f"  [{i}/{len(to_fetch_1d)}] {sym}: no instrument key, skip")
                 continue
             logger.info(f"  [{i}/{len(to_fetch_1d)}] {sym}")
+            # Force full backfill for gap symbols: incremental would only add
+            # the last few days, missing the early history that's actually absent.
+            sym_force = args.force or (coverage_1d[sym]["bars"] < 450)
             backfill_symbol(history_api, sym, ikey, timeframes=["1day"],
-                            days=args.days, force=args.force)
+                            days=args.days, force=sym_force)
 
     # ── Sector indices via Upstox ─────────────────────────────────────────────
     logger.info("\n=== Step 4: Sector indices (Upstox) ===")
