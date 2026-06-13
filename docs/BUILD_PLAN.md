@@ -1,8 +1,9 @@
 # Build Plan — Strategy Analysis + Code & Test Roadmap
 
-> Companion to `docs/STRATEGY_RESEARCH.md` (the spec) and `docs/CODEBASE_MAP.md` (what exists).
+> Companion to `docs/STRATEGY_RESEARCH.md` (the spec), `docs/EDGE_RESEARCH.md` (the alpha
+> hypotheses + how to test them), and `docs/CODEBASE_MAP.md` (what exists).
 > This doc: (1) critiques the strategy and says what to **add / subtract**, (2) defines the
-> target architecture, (3) lays out a phased roadmap **to code and to test**.
+> target architecture + concrete contracts, (3) lays out a phased roadmap **to code and to test**.
 > Last updated: 2026-06-13
 
 ---
@@ -107,6 +108,81 @@ scripts/
 
 ---
 
+## Part 2A — Concrete contracts (build to these)
+
+These are the exact interfaces the phases below implement. Code to the contract, test the contract.
+
+### The signed scorer — one function, long **and** short
+
+Shorting is **not** a separate strategy — it's the same scorer with the sign flipped. Positive
+confluence → long; negative confluence → short. This gives bear-market coverage for almost no
+extra code.
+
+```python
+# strategy/score.py
+@dataclass
+class ScoreResult:
+    score: float            # signed: + = long bias, − = short bias
+    direction: str          # "LONG" | "SHORT" | "FLAT"
+    conviction: float       # |score| mapped to 0.5 / 1.0 / 1.5  (risk multiplier)
+    dimensions: dict        # {"trend": +2, "momentum": +1, "volume": +2, ...} for audit
+    reasons: list[str]      # human-readable why, for the trade log / dashboard
+
+def score(window: pd.DataFrame, ctx: MarketContext, params: StrategyParams) -> ScoreResult:
+    """PURE. window = bars up to NOW for one symbol (never future). ctx = nifty/vix/sector
+    state at NOW. params from config. Same inputs → same output. No I/O, no globals."""
+```
+Direction rule: `score >= +entry_threshold → LONG`; `score <= −entry_threshold → SHORT`; else FLAT.
+
+### The risk engine — separate the three knobs
+
+Conviction decides *how much to risk*; stop distance decides *share count*; budget caps the
+*downside*. Never collapse these into one "% allocation" number.
+
+```python
+# strategy/sizing.py
+def position_size(capital, score: ScoreResult, entry, stop, atr,
+                  params: StrategyParams, open_risk: float) -> SizeResult:
+    risk_budget = capital * params.base_risk_pct * score.conviction      # e.g. 20000*1%*1.5 = 300
+    slippage_pad = params.slippage_pad_atr * atr                          # gaps THROUGH the stop
+    risk_per_share = abs(entry - stop) + slippage_pad
+    qty = floor(risk_budget / risk_per_share)
+    qty = min(qty, floor(params.max_exposure / entry))                   # leverage cap
+    # PORTFOLIO GATE — refuse if it breaches caps:
+    if open_risk + risk_budget > capital * params.daily_risk_cap_pct:    # e.g. 3%
+        return SizeResult(qty=0, reason="daily_risk_cap")
+    return SizeResult(qty=qty, risk=qty*risk_per_share, exposure=qty*entry)
+```
+
+| Knob | Default | Meaning |
+|---|---|---|
+| `base_risk_pct` | 1.0% | rupees risked per trade at conviction 1.0 (₹200 on ₹20k) |
+| conviction tiers | 0.5 / 1.0 / 1.5 | score 5–7 / 8–10 / 11+ → risk multiplier |
+| `daily_risk_cap_pct` | 3.0% | stop trading for the day past this cumulative risk/loss |
+| `max_concurrent_risk` | 2–3R | sum of open-trade risk ceiling |
+| `sector_cap` | per sector | correlated positions share a risk budget |
+| `slippage_pad_atr` | 0.3–0.5 | momentum stocks gap *through* the stop |
+
+> Worked example: ₹20k, score 11+ (conv 1.5) → risk ₹300. Stock ₹500, ATR ₹8, stop ₹488,
+> pad ₹2 → risk/share ₹14 → qty 21 → exposure ₹10,500. Stop-out = −₹294 ≈ −1.5% of account.
+> (The old "50% allocation" scheme would have risked ~−5% on the same trade.)
+
+### Stops & targets — derived, not picked
+
+`strategy/score.py` emits the *signal*; the **stop/target levels come from MAE/MFE analysis**
+on historical signals (see `docs/EDGE_RESEARCH.md` §5): stop ≈ 75th-pct of winners' MAE; **no
+fixed target — trail + hard time-stop**, both ATR-scaled. The backtest measures these; we do not
+hardcode 2%/4%.
+
+### Two-tier universe (let the backtest pick the live set)
+
+Research on all 750; tag each name **Tier A** (Nifty 100 — tight cost, full size) vs **Tier B**
+(liquid midcaps that move more — reduced size, wider slippage). Also test the **F&O-209** subset
+(tightest spreads, reliably shortable) as the candidate *live* universe. Cost-adjusted OOS edge
+decides; don't pre-judge.
+
+---
+
 ## Part 3 — Roadmap (Code) with Test Gates
 
 Each phase ends at a **gate** that must pass before the next begins. Nothing here trades real
@@ -177,19 +253,37 @@ money until Phase 5, and only after Phase 3's statistical bar is cleared.
 - **Determinism:** identical inputs → byte-identical trade log.
 - **Cost reconciliation:** sum of per-trade costs == independent recompute.
 
-### Phase 3 — Validation: answer the 8 open questions ▸ ~2–3 sessions
+### Phase 3 — Validation: prove the edge ▸ ~3–4 sessions
 
-**Run**
-- [ ] Walk-forward sweep over: ORB window {15,30,45m}, RVOL {2,2.5,3×}, VIX filter {on/off},
-      score-weight sets, R% {0.5,1,1.5}.
-- [ ] Produce a comparison report + tearsheet per config.
-- [ ] **Monte Carlo** on trade-sequence ordering → distribution of max-drawdown.
-- [ ] **Sensitivity** check: does a small param nudge collapse the edge? (over-fit smell test).
+This phase **runs the experiments in `docs/EDGE_RESEARCH.md`** through the measurement protocol
+(§1) and the anti-overfit controls (§6). Do them in the queue order — each that passes becomes a
+feature in `strategy/score.py`; each that fails is documented dead and dropped.
+
+**Run (in order)**
+- [ ] **H1 — cross-sectional ranking** (highest EV): daily Rank-IC of the signed momentum-volume
+      rank vs forward return, OOS. Decile top-minus-bottom spread after costs.
+- [ ] **H2 — intraday momentum anomaly**: regress 9:45→close on the 9:15–9:45 signed VWAP return,
+      OOS; cost-adjusted expectancy of the long/short rule.
+- [ ] **H5 — sector relative strength** (needs `config/sector_map.json`): does conditioning on
+      sector rank lift H1's Rank-IC?
+- [ ] **H4 — beta-decomposed gaps**: idiosyncratic-gap vs raw-gap expectancy, OOS.
+- [ ] **H3 — VIX regime switch**: expectancy of momentum vs reversion by VIX percentile bucket;
+      confirm the crossover; build the VIX-switched blend.
+- [ ] **Derive stops/targets** from MAE/MFE (EDGE_RESEARCH §5) on the surviving signals.
+- [ ] **Param sweep** on the survivors only: ORB window {15,30,45m}, RVOL {2,2.5,3×}, R% {0.5,1,1.5},
+      score weights — optimize on **train fold**, report **OOS**.
+- [ ] **Anti-overfit battery** (EDGE_RESEARCH §6): random-entry + shuffled-label negative controls,
+      ±20% parameter sensitivity, 1.5× slippage cost stress, capacity check (order < X% of bar vol).
+- [ ] **Monte Carlo** on trade-sequence ordering → max-drawdown distribution.
+
+**Definition of done:** a `docs/` results write-up per hypothesis (pass/fail + the OOS numbers),
+and a single chosen configuration carried into paper trading.
 
 **Test gate 3 (the real go/no-go):**
-- Out-of-sample **Sharpe > 1.0**, **beats buy-and-hold Nifty after costs**, max-DD tolerable,
-  and edge is **stable across folds** (not one lucky window). If it fails → iterate the spec,
-  do **not** proceed to live.
+- At least one signal with **OOS edge, same sign in every fold**, that **beats the negative
+  controls** and **survives 1.5× slippage**.
+- Assembled strategy: **OOS Sharpe > 1.0**, **beats buy-and-hold Nifty after costs**, max-DD
+  within the drawdown budget. If it fails → iterate the spec; **do not** proceed to live.
 
 ### Phase 4 — Paper trading ▸ 60+ trading days
 
