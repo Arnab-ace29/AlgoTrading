@@ -36,6 +36,8 @@ from loguru import logger
 DB_PATH         = ROOT / "data" / "algo_trading.sqlite"
 UNIVERSES_FILE  = ROOT / "config" / "universes.json"
 DEFAULT_OUTPUT  = ROOT / "data" / "stock_master.xlsx"
+YF_CACHE_FILE   = ROOT / "data" / "yfinance_info_cache.json"
+YF_CACHE_TTL    = 7 * 86400   # re-use cached market caps for a week
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -108,21 +110,42 @@ def get_batch_daily_metrics(conn: sqlite3.Connection, last_n_days: int = 30) -> 
     return result
 
 
-def fetch_yfinance_info(symbols: list[str]) -> dict[str, dict]:
-    """Fetch market cap, sector, industry from yfinance for all symbols."""
+def _load_yf_cache() -> dict[str, dict]:
+    """Load the yfinance info cache if it exists and is fresh (< TTL)."""
+    if not YF_CACHE_FILE.exists():
+        return {}
+    if time.time() - YF_CACHE_FILE.stat().st_mtime > YF_CACHE_TTL:
+        logger.info("  yfinance cache is stale (> 7d); will refresh.")
+        return {}
+    try:
+        return json.loads(YF_CACHE_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def fetch_yfinance_info(symbols: list[str], refresh: bool = False) -> dict[str, dict]:
+    """
+    Market cap, sector, industry, name, ISIN per symbol from yfinance.
+
+    Cached to data/yfinance_info_cache.json (7-day TTL): only symbols missing from
+    the cache are fetched, so adding a few names to the universe costs a few calls,
+    not a 15-minute full re-fetch. Pass refresh=True to force a full re-fetch.
+    """
     try:
         import yfinance as yf
     except ImportError:
         logger.warning("yfinance not installed; skip market cap fetch")
         return {}
 
-    info: dict[str, dict] = {}
-    total = len(symbols)
-    for i, sym in enumerate(symbols, 1):
+    cache = {} if refresh else _load_yf_cache()
+    to_fetch = [s for s in symbols if s not in cache]
+    logger.info(f"  yfinance: {len(cache)} cached, {len(to_fetch)} to fetch")
+
+    info: dict[str, dict] = {s: cache[s] for s in symbols if s in cache}
+    for i, sym in enumerate(to_fetch, 1):
         ticker_sym = f"{sym}.NS"
         try:
-            t = yf.Ticker(ticker_sym)
-            d = t.info
+            d = yf.Ticker(ticker_sym).info
             mkt_cap_cr = round((d.get("marketCap") or 0) / 1e7, 0)
             info[sym] = {
                 "market_cap_cr": mkt_cap_cr,
@@ -132,11 +155,18 @@ def fetch_yfinance_info(symbols: list[str]) -> dict[str, dict]:
                 "isin":          d.get("isin", ""),
             }
             if i % 50 == 0:
-                logger.info(f"  yfinance: {i}/{total} done")
+                logger.info(f"  yfinance: {i}/{len(to_fetch)} fetched")
             time.sleep(0.3)
         except Exception as e:
             logger.debug(f"  yfinance error for {ticker_sym}: {e}")
             info[sym] = {"market_cap_cr": 0, "sector": "", "industry": "", "name": sym, "isin": ""}
+
+    # Persist the merged cache (existing entries + newly fetched).
+    try:
+        merged = {**cache, **info}
+        YF_CACHE_FILE.write_text(json.dumps(merged), encoding="utf-8")
+    except Exception as e:
+        logger.warning(f"Could not write yfinance cache: {e}")
     return info
 
 
@@ -173,6 +203,7 @@ def get_cap_category(sym: str, universes: dict[str, set[str]], mkt_cap_cr: float
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-yfinance", action="store_true", help="Skip yfinance market cap fetch (fast mode)")
+    parser.add_argument("--refresh-yf", action="store_true", help="Force full yfinance re-fetch (ignore cache)")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
     args = parser.parse_args()
 
@@ -194,13 +225,17 @@ def main():
     coverage = get_db_coverage(conn)
     logger.info(f"  Symbols with any data in DB: {len(coverage)}")
 
-    # yfinance enrichment
+    # yfinance enrichment (cached — only new symbols are fetched)
     yf_info: dict[str, dict] = {}
     if not args.no_yfinance:
-        logger.info(f"Fetching yfinance info for {len(all_equity_syms)} symbols (this takes ~5-10 min)...")
-        yf_info = fetch_yfinance_info(all_equity_syms)
+        logger.info(f"yfinance info for {len(all_equity_syms)} symbols (cache-aware)...")
+        yf_info = fetch_yfinance_info(all_equity_syms, refresh=args.refresh_yf)
     else:
         logger.info("Skipping yfinance (--no-yfinance)")
+
+    # Latest trading day present in the DB — reference for the staleness flag.
+    row = conn.execute("SELECT MAX(timestamp) FROM minute_candles WHERE timeframe='1day'").fetchone()
+    db_last_date = str(row[0])[:10] if row and row[0] else None
 
     # Single batch query for turnover + ATR (avoids 748 per-symbol queries)
     daily_metrics = get_batch_daily_metrics(conn)
@@ -234,6 +269,34 @@ def main():
         # Strategy filter
         filter_pass = (mkt_cap >= 1000 or in_n100) and avg_turnover >= 50
 
+        # Two-tier universe (for the strategy): A = Nifty 100 (tight cost, full size),
+        # B = liquid mid/large that pass the filter, — = doesn't qualify.
+        if in_n100:
+            tier = "A · Nifty100"
+        elif filter_pass:
+            tier = "B · Mid/Liquid"
+        else:
+            tier = "—"
+
+        # History depth (explains low bar counts: recent IPOs aren't a data problem).
+        if c1d["bars"] >= 450:
+            history = "Full (2yr)"
+        elif c1d["bars"] > 0:
+            history = "Partial (IPO/new)"
+        else:
+            history = "None"
+
+        # Staleness: how far the symbol's last 1-day bar lags the DB's latest day.
+        days_stale = ""
+        data_current = "N"
+        if c1d["last"] and db_last_date:
+            try:
+                lag = (datetime.fromisoformat(db_last_date) - datetime.fromisoformat(c1d["last"])).days
+                days_stale = lag
+                data_current = "Y" if lag <= 1 else "N"   # 1-day tolerance (download timing)
+            except ValueError:
+                pass
+
         rows.append({
             "Symbol":               sym,
             "Company Name":         yf.get("name", sym),
@@ -241,6 +304,7 @@ def main():
             "Sector":               yf.get("sector", ""),
             "Industry":             yf.get("industry", ""),
             "Cap Category":         cap_cat,
+            "Universe Tier":        tier,
             "Market Cap (₹ Cr)":   mkt_cap,
             "Avg Daily Turnover (₹ Cr)": avg_turnover,
             "ATR %":                atr_pct,
@@ -249,6 +313,9 @@ def main():
             "Nifty Total Market":   "Y" if in_ntot else "",
             "F&O Eligible":         "Y" if in_fo   else "",
             "Strategy Filter Pass": "Y" if filter_pass else "N",
+            "History":              history,
+            "Data Current?":        data_current,
+            "Days Stale":           days_stale,
             "5min: Available":      "Y" if c5["bars"] > 0 else "N",
             "5min: Start Date":     c5["first"] or "",
             "5min: End Date":       c5["last"]  or "",
@@ -283,22 +350,21 @@ def main():
         df.to_excel(writer, index=False, sheet_name="Stock Master")
         ws = writer.sheets["Stock Master"]
 
-        # Column widths
-        col_widths = {
-            "A": 14, "B": 28, "C": 14, "D": 18, "E": 22,  # Symbol, Name, ISIN, Sector, Industry
-            "F": 22, "G": 16, "H": 24, "I": 8,             # Cap, MktCap, Turnover, ATR
-            "J": 10, "K": 10, "L": 20, "M": 14,            # Index flags
-            "N": 22,                                         # Filter
-            "O": 16, "P": 14, "Q": 14, "R": 14, "S": 16, "T": 18,  # 5min cols
-            "U": 16, "V": 14, "W": 14, "X": 14, "Y": 16,  # 1day cols
-            "Z": 14, "AA": 20,                               # Source columns
-            "AB": 18,                                        # Last Updated
-        }
         from openpyxl.styles import PatternFill, Font, Alignment
         from openpyxl.utils import get_column_letter
 
-        for col_letter, width in col_widths.items():
-            ws.column_dimensions[col_letter].width = width
+        # Column widths by NAME (robust to column additions/reordering).
+        name_widths = {
+            "Symbol": 13, "Company Name": 28, "ISIN": 14, "Sector": 18, "Industry": 22,
+            "Cap Category": 20, "Universe Tier": 16, "Market Cap (₹ Cr)": 15,
+            "Avg Daily Turnover (₹ Cr)": 22, "ATR %": 8,
+            "Nifty 50": 9, "Nifty 100": 9, "Nifty Total Market": 16, "F&O Eligible": 12,
+            "Strategy Filter Pass": 18, "History": 17, "Data Current?": 13, "Days Stale": 11,
+        }
+        default_w = 14
+        for idx, col in enumerate(df.columns, start=1):
+            letter = get_column_letter(idx)
+            ws.column_dimensions[letter].width = name_widths.get(col, default_w)
 
         # Header row: bold + light blue fill
         header_fill = PatternFill("solid", fgColor="BDD7EE")
@@ -313,18 +379,25 @@ def main():
         red_fill    = PatternFill("solid", fgColor="FFC7CE")
         yellow_fill = PatternFill("solid", fgColor="FFEB9C")
 
-        filter_col_idx = df.columns.get_loc("Strategy Filter Pass") + 1
-        avail_5m_idx   = df.columns.get_loc("5min: Available") + 1
+        filter_col_idx  = df.columns.get_loc("Strategy Filter Pass") + 1
+        avail_5m_idx    = df.columns.get_loc("5min: Available") + 1
+        current_col_idx = df.columns.get_loc("Data Current?") + 1
 
         for row in ws.iter_rows(min_row=2, max_row=ws.max_row):
-            filt_cell = row[filter_col_idx - 1]
-            avail_cell = row[avail_5m_idx - 1]
+            filt_cell    = row[filter_col_idx - 1]
+            avail_cell   = row[avail_5m_idx - 1]
+            current_cell = row[current_col_idx - 1]
             if filt_cell.value == "Y":
                 filt_cell.fill = green_fill
             elif filt_cell.value == "N":
                 filt_cell.fill = red_fill
             if avail_cell.value == "N":
                 avail_cell.fill = yellow_fill
+            # Stale data → red flag so it's obvious what needs a re-download.
+            if current_cell.value == "N":
+                current_cell.fill = red_fill
+            elif current_cell.value == "Y":
+                current_cell.fill = green_fill
 
         # Freeze header row
         ws.freeze_panes = "A2"
@@ -335,14 +408,31 @@ def main():
         n_1d      = (df["1day: Available"] == "Y").sum()
         n_filter  = (df["Strategy Filter Pass"] == "Y").sum()
         n_n100    = (df["Nifty 100"] == "Y").sum()
+        n_tierA   = (df["Universe Tier"] == "A · Nifty100").sum()
+        n_tierB   = (df["Universe Tier"] == "B · Mid/Liquid").sum()
+        n_fo      = (df["F&O Eligible"] == "Y").sum()
+        n_full    = (df["History"] == "Full (2yr)").sum()
+        n_partial = (df["History"] == "Partial (IPO/new)").sum()
+        n_current = (df["Data Current?"] == "Y").sum()
+        n_stale   = n_total - n_current
 
         summary_data = [
             ["Metric", "Value"],
             ["Total symbols in universe",    n_total],
+            ["— Tier A (Nifty 100)",         n_tierA],
+            ["— Tier B (Mid/Liquid, passes filter)", n_tierB],
+            ["— F&O eligible",               n_fo],
+            ["Pass strategy filter (≥1000cr mktcap + ≥50cr/day vol)", n_filter],
+            ["", ""],
             ["Symbols with 5-min data",      n_5m],
             ["Symbols with 1-day data",      n_1d],
-            ["Nifty 100 symbols",            n_100 := n_n100],
-            ["Pass strategy filter (≥1000cr mktcap + ≥50cr/day vol)", n_filter],
+            ["— Full history (~2yr)",        n_full],
+            ["— Partial history (IPO/new)",  n_partial],
+            ["", ""],
+            ["DB latest trading day",        db_last_date or "—"],
+            ["Data current (up to latest day)", n_current],
+            ["Data STALE (needs re-download)",  n_stale],
+            ["", ""],
             ["Generated at",                  datetime.now().strftime("%Y-%m-%d %H:%M")],
         ]
         ws_sum = writer.book.create_sheet("Summary")
@@ -352,7 +442,7 @@ def main():
             cell.font = Font(bold=True)
             cell.fill = header_fill
         ws_sum.column_dimensions["A"].width = 52
-        ws_sum.column_dimensions["B"].width = 16
+        ws_sum.column_dimensions["B"].width = 18
 
         # ── Indices & Macro sheet ─────────────────────────────────────────────
         INDEX_META = {

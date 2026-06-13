@@ -133,7 +133,10 @@ def main():
     parser.add_argument("--tf",        choices=["5min", "1day", "both"], default="both")
     parser.add_argument("--vix-only",  action="store_true", help="Only download VIX + indices")
     parser.add_argument("--days",      type=int, default=LOOKBACK_DAYS)
-    parser.add_argument("--force",     action="store_true", help="Re-fetch even if data exists")
+    parser.add_argument("--force",     action="store_true", help="Re-fetch full history even if data exists")
+    parser.add_argument("--update",    action="store_true",
+                        help="Daily top-up: incrementally bring ALL symbols up to the latest "
+                             "trading day (vs the default which only fills below-threshold gaps)")
     args = parser.parse_args()
 
     if not (ANALYTICS_TOKEN or UPSTOX_ACCESS_TOKEN):
@@ -179,14 +182,16 @@ def main():
             d5 = date.fromisoformat(c5["first"]); d1 = date.fromisoformat(c1["first"])
             return (d5 - d1).days > 40   # 5-min starts well after 1-day → gap
 
-        # Determine which symbols need download (and which need a FORCED full backfill)
+        # Determine which symbols need download (and which need a FORCED full backfill).
+        # --update: top up ALL symbols incrementally (daily refresh).
+        # default:  only fill below-threshold gaps + partial-history symbols.
         to_fetch_5m, force_5m = [], set()
         for sym in symbols:
             short = coverage_5m[sym]["bars"] < 500   # < ~7 trading days
             partial = _incomplete_5m(sym)
-            if args.force or short or partial:
+            if args.update or args.force or short or partial:
                 to_fetch_5m.append(sym)
-                if args.force or short or partial:
+                if args.force or short or partial:    # NOT plain --update → incremental
                     force_5m.add(sym)
 
         logger.info(f"  Symbols to fetch/update (5min): {len(to_fetch_5m)}")
@@ -208,7 +213,8 @@ def main():
         logger.info("\n=== Step 3: 1-day OHLCV (all symbols) ===")
         coverage_1d = get_db_coverage(conn, symbols, "1day")
 
-        to_fetch_1d = [s for s in symbols if args.force or coverage_1d[s]["bars"] < 450]
+        to_fetch_1d = [s for s in symbols
+                       if args.update or args.force or coverage_1d[s]["bars"] < 450]
         logger.info(f"  Symbols to fetch/update (1day): {len(to_fetch_1d)}")
 
         for i, sym in enumerate(to_fetch_1d, 1):

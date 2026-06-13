@@ -15,6 +15,11 @@ data/*.xlsx
 data/stock_master.xlsx
 # Large Upstox instrument master cache (regenerated weekly by instruments.py)
 data/nse_instruments_cache.json.gz
+# yfinance market-cap cache (rebuilt by build_data_excel.py; 7-day TTL)
+data/yfinance_info_cache.json
+# one-off analysis outputs
+data/missing_caps.csv
+data/missing_caps_liquid.csv
 
 # ── Trained models ────────────────────────────────────────────────────────────
 models/saved/*.pkl
