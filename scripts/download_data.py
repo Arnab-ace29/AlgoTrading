@@ -164,13 +164,30 @@ def main():
     if args.tf in ("5min", "both"):
         logger.info("\n=== Step 2: 5-min OHLCV (equity) ===")
         coverage_5m = get_db_coverage(conn, symbols, "5min")
+        # 1-day coverage too, to detect PARTIAL 5-min history: a symbol can have
+        # >500 recent 5-min bars yet be missing its early history (e.g. a symbol
+        # added later with only a stale recent month). If its 5-min start lags its
+        # 1-day start by a lot, the 5-min backfill is incomplete and must be forced.
+        coverage_1d_pre = get_db_coverage(conn, symbols, "1day")
 
-        # Determine which symbols need download
-        to_fetch_5m = []
+        def _incomplete_5m(sym: str) -> bool:
+            c5, c1 = coverage_5m[sym], coverage_1d_pre[sym]
+            if c5["bars"] == 0 or not c5["first"] or not c1["first"]:
+                return False
+            if c5["first"] <= c1["first"]:
+                return False
+            d5 = date.fromisoformat(c5["first"]); d1 = date.fromisoformat(c1["first"])
+            return (d5 - d1).days > 40   # 5-min starts well after 1-day → gap
+
+        # Determine which symbols need download (and which need a FORCED full backfill)
+        to_fetch_5m, force_5m = [], set()
         for sym in symbols:
-            cov = coverage_5m[sym]
-            if args.force or cov["bars"] < 500:   # < ~7 trading days → fetch
+            short = coverage_5m[sym]["bars"] < 500   # < ~7 trading days
+            partial = _incomplete_5m(sym)
+            if args.force or short or partial:
                 to_fetch_5m.append(sym)
+                if args.force or short or partial:
+                    force_5m.add(sym)
 
         logger.info(f"  Symbols to fetch/update (5min): {len(to_fetch_5m)}")
 
@@ -180,8 +197,11 @@ def main():
                 logger.warning(f"  [{i}/{len(to_fetch_5m)}] {sym}: no instrument key, skip")
                 continue
             logger.info(f"  [{i}/{len(to_fetch_5m)}] {sym}")
+            # Force full backfill for short/partial-history symbols: incremental
+            # would only add recent days, leaving the early gap unfilled.
+            sym_force = args.force or (sym in force_5m)
             backfill_symbol(history_api, sym, ikey, timeframes=["5min"],
-                            days=args.days, force=args.force)
+                            days=args.days, force=sym_force)
 
     # ── 1-day candles ─────────────────────────────────────────────────────────
     if args.tf in ("1day", "both"):
