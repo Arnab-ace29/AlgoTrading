@@ -59,8 +59,12 @@ logs/      → runtime logs
 | File | Purpose | Status |
 |---|---|---|
 | `STRATEGY_RESEARCH.md` | The strategy spec — Volume Momentum Breakout (Gap-and-Go), 5-dimension framework, scoring, workflow, open questions. | ✅ Current (spec only, not built) |
+| `STRATEGIES.md` | Canonical readable reference of every strategy + logic, with a 🔵/🟡/🟢 status per strategy. | ✅ (all 🔵 spec) |
+| `EDGE_RESEARCH.md` | Falsifiable alpha hypotheses (H1–H6) + how to test each. | ✅ |
+| `BACKTEST_OUTPUT.md` | The 4 result artifacts a run emits (trades.csv, summary, tearsheet, decision journal). | ✅ (spec) |
+| `SCRIPTS.md` | Every script: purpose/inputs/outputs/flags + run sequences. | ✅ |
 | `CODEBASE_MAP.md` | This file. | ✅ |
-| `BUILD_PLAN.md` | Strategy analysis + code & test roadmap. | ✅ |
+| `BUILD_PLAN.md` | Strategy analysis + contracts + code & test roadmap. | ✅ |
 | `DATA.md` | Data sources/schema/pipeline. | ❌ **Out of sync** — documents 5 deleted tables, an old `trade_log` shape, and dead modules (`upstox_feed.py`, `nse_data.py`, `signals/news`, `signals/llm`). Needs rewrite to match `schema.sql`. |
 | `UPSTOX_API_REFERENCE.md` | Upstox V3 API notes. | ✅ Reference |
 | `CODE_AUDIT.md` | Post-mortem of the old codebase — what worked / what failed. | ✅ Reference |
