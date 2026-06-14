@@ -54,6 +54,8 @@ class BacktestConfig:
     slippage_pct: float   = 0.005      # 0.5% per fill (fast momentum names)
     capital: float        = 20_000.0
     fade: bool = False                 # invert direction: fade the extremes (reversion) vs follow (momentum)
+    control: str = ""                  # "" | "random" | "shuffle"  (negative-control modes)
+    seed: int = 42                     # RNG seed for controls (reproducible)
     symbols: list[str] = field(default_factory=list)   # empty => all in universe table coverage
     rank: RankParams = field(default_factory=RankParams)
     sizing: SizingParams = field(default_factory=SizingParams)
@@ -188,21 +190,28 @@ def simulate_trade(path: pd.DataFrame, direction: str, entry_price: float,
     }
 
 
-# ── Orchestration ─────────────────────────────────────────────────────────────
-def run_backtest(cfg: BacktestConfig) -> pd.DataFrame:
-    conn = sqlite3.connect(str(DB_PATH), timeout=60)
+# ── Feature cache ─────────────────────────────────────────────────────────────
+CACHE_DIR = ROOT / "backtest" / "cache"
 
-    # Which symbols? default = everything with 5-min coverage in range.
-    if cfg.symbols:
-        symbols = cfg.symbols
-    else:
-        rows = conn.execute(
-            "SELECT DISTINCT symbol FROM minute_candles WHERE timeframe='5min'"
-        ).fetchall()
-        symbols = sorted(r[0] for r in rows)
-    logger.info(f"Backtest universe: {len(symbols)} symbols, {cfg.from_date}..{cfg.to_date}")
 
-    # Pass A — entry features per symbol.
+def _feature_cache_path(cfg: BacktestConfig, n_symbols: int) -> Path:
+    import hashlib
+    key = f"{cfg.from_date}|{cfg.to_date}|{cfg.entry_time}|{cfg.rvol_lookback_days}|{n_symbols}"
+    h = hashlib.md5(key.encode()).hexdigest()[:10]
+    return CACHE_DIR / f"features_{h}.pkl"
+
+
+def build_entry_features(cfg: BacktestConfig, conn, symbols: list[str],
+                         use_cache: bool = True) -> pd.DataFrame:
+    """Pass A: per-(symbol,date) entry-bar features. Cached to disk (slow scan once)."""
+    cache = _feature_cache_path(cfg, len(symbols))
+    if use_cache and cache.exists():
+        logger.info(f"Loading cached entry features ← {cache.name}")
+        try:
+            return pd.read_pickle(cache)
+        except Exception:
+            logger.warning("Feature cache unreadable; rebuilding.")
+
     feats = []
     for i, sym in enumerate(symbols, 1):
         f = entry_features_for_symbol(conn, sym, cfg)
@@ -211,16 +220,50 @@ def run_backtest(cfg: BacktestConfig) -> pd.DataFrame:
         if i % 100 == 0:
             logger.info(f"  scanned {i}/{len(symbols)} symbols")
     if not feats:
-        logger.warning("No entry features — empty backtest.")
         return pd.DataFrame()
     feat = pd.concat(feats, ignore_index=True)
     logger.info(f"Entry-feature rows: {len(feat)} across {feat['date'].nunique()} days")
+    if use_cache:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        try:
+            feat.to_pickle(cache)
+        except Exception as e:
+            logger.warning(f"Could not cache features ({e}); continuing without cache.")
+    return feat
 
-    # Pass B — per day: rank, size, simulate.
+
+def _day_picks(day_feat: pd.DataFrame, cfg: BacktestConfig, rng) -> pd.DataFrame:
+    """Selection for one day, honouring the negative-control mode."""
+    snap = day_feat.set_index("symbol")[["rvol", "ret_open"]].copy()
+
+    if cfg.control == "shuffle":
+        # Destroy the signal↔symbol mapping but keep the marginal distribution:
+        # the real edge must beat this.
+        snap["ret_open"] = rng.permutation(snap["ret_open"].to_numpy())
+
+    if cfg.control == "random":
+        # Ignore the signal entirely: random eligible names, random direction.
+        elig = snap[(snap["rvol"] >= cfg.rank.min_rvol)
+                    & (snap["ret_open"].abs() >= cfg.rank.min_abs_ret)]
+        if elig.empty:
+            return pd.DataFrame(columns=["signal", "rank_pct", "direction"])
+        n = min(len(elig), cfg.rank.max_per_side * 2)
+        chosen = rng.choice(elig.index.to_numpy(), size=n, replace=False)
+        dirs = rng.choice(["LONG", "SHORT"], size=n)
+        return pd.DataFrame({"signal": 0.0, "rank_pct": 0.5, "direction": dirs},
+                            index=pd.Index(chosen, name="symbol"))
+
+    return select(snap, cfg.rank)
+
+
+def simulate_from_features(feat: pd.DataFrame, cfg: BacktestConfig, conn) -> pd.DataFrame:
+    """Pass B: per day rank/size/simulate over a (possibly date-filtered) feature table."""
+    if feat.empty:
+        return pd.DataFrame()
     trades = []
-    for d, day_feat in feat.groupby("date"):
-        snap = day_feat.set_index("symbol")[["rvol", "ret_open"]]
-        picks = select(snap, cfg.rank)
+    for day_ord, (d, day_feat) in enumerate(feat.groupby("date")):
+        rng = np.random.default_rng(cfg.seed + day_ord)
+        picks = _day_picks(day_feat, cfg, rng)
         if picks.empty:
             continue
         open_risk = 0.0
@@ -284,7 +327,30 @@ def run_backtest(cfg: BacktestConfig) -> pd.DataFrame:
                 "R_multiple": round(r_mult, 3),
                 "mfe_R": round(mfe_R, 2), "mae_R": round(mae_R, 2),
             })
-    conn.close()
-    tdf = pd.DataFrame(trades)
-    logger.success(f"Backtest produced {len(tdf)} trades.")
-    return tdf
+    return pd.DataFrame(trades)
+
+
+# ── Orchestration ─────────────────────────────────────────────────────────────
+def resolve_symbols(cfg: BacktestConfig, conn) -> list[str]:
+    if cfg.symbols:
+        return cfg.symbols
+    rows = conn.execute(
+        "SELECT DISTINCT symbol FROM minute_candles WHERE timeframe='5min'").fetchall()
+    return sorted(r[0] for r in rows)
+
+
+def run_backtest(cfg: BacktestConfig, use_cache: bool = True) -> pd.DataFrame:
+    """Full run: build (or load cached) entry features, then simulate the whole range."""
+    conn = sqlite3.connect(str(DB_PATH), timeout=60)
+    try:
+        symbols = resolve_symbols(cfg, conn)
+        logger.info(f"Backtest universe: {len(symbols)} symbols, {cfg.from_date}..{cfg.to_date}")
+        feat = build_entry_features(cfg, conn, symbols, use_cache=use_cache)
+        if feat.empty:
+            logger.warning("No entry features — empty backtest.")
+            return pd.DataFrame()
+        trades = simulate_from_features(feat, cfg, conn)
+    finally:
+        conn.close()
+    logger.success(f"Backtest produced {len(trades)} trades.")
+    return trades

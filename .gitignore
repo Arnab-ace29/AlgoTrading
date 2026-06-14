@@ -64,3 +64,4 @@ dashboard/frontend/dist/
 dashboard/frontend/.env
 dashboard/ui/node_modules/
 dashboard/ui/dist/
+backtest/cache/
