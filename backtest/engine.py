@@ -53,6 +53,7 @@ class BacktestConfig:
     atr_trail_mult: float = 2.0        # trail distance from the best favorable price
     slippage_pct: float   = 0.005      # 0.5% per fill (fast momentum names)
     capital: float        = 20_000.0
+    fade: bool = False                 # invert direction: fade the extremes (reversion) vs follow (momentum)
     symbols: list[str] = field(default_factory=list)   # empty => all in universe table coverage
     rank: RankParams = field(default_factory=RankParams)
     sizing: SizingParams = field(default_factory=SizingParams)
@@ -227,6 +228,8 @@ def run_backtest(cfg: BacktestConfig) -> pd.DataFrame:
             meta = day_feat[day_feat["symbol"] == sym].iloc[0]
             atr = float(meta["atr"])
             direction = prow["direction"]
+            if cfg.fade:   # reversion: trade AGAINST the morning move
+                direction = "SHORT" if direction == "LONG" else "LONG"
             sign = 1.0 if direction == "LONG" else -1.0
 
             # Load that day's post-entry bars to find the fill + simulate.

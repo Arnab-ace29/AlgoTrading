@@ -41,6 +41,8 @@ def main():
     ap.add_argument("--capital", type=float, default=20_000.0)
     ap.add_argument("--risk-pct", type=float, default=0.01)
     ap.add_argument("--limit", type=int, default=0, help="cap universe size (0 = all)")
+    ap.add_argument("--fade", action="store_true",
+                    help="invert direction: fade the extremes (reversion) instead of following (momentum)")
     args = ap.parse_args()
 
     # Universe: all symbols with 5-min coverage (optionally capped for a fast run).
@@ -60,7 +62,7 @@ def main():
         from_date=args.from_date, to_date=args.to_date,
         entry_time=args.entry, time_stop=args.time_stop,
         atr_stop_mult=args.atr_stop, atr_trail_mult=args.atr_trail,
-        slippage_pct=args.slippage, capital=args.capital, symbols=syms,
+        slippage_pct=args.slippage, capital=args.capital, symbols=syms, fade=args.fade,
         rank=RankParams(entry_time_ist=args.entry, top_pct=args.top_pct,
                         min_rvol=args.min_rvol, max_per_side=args.max_per_side),
         sizing=SizingParams(base_risk_pct=args.risk_pct),
